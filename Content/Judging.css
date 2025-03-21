@@ -1,0 +1,50 @@
+﻿
+
+.bodyMessage {
+
+     border:1px dashed orange;
+     background-color: #ffcf71;
+     display:none;
+     position:absolute;
+     color:black;
+     font-size:1em;
+     text-align:center;
+     margin:auto;         
+}
+
+.competitorScoreTable {
+    border-spacing: 0;
+    border-collapse: collapse;        
+    width:100%;    
+}
+
+.competitorScoreTable  td { border: 0px solid black; white-space: nowrap; padding: 3px; margin: 0px;}
+
+.competitorListTable td { border: 0px solid black; white-space: nowrap; padding: 3px; margin: 0px;}
+
+
+tr.highlightdark td {
+    background-color: rgb(189, 189, 189);
+    border-bottom: 1px solid dimgray;        
+}
+
+tr.highlightlight td {
+    background-color: #70B8FF;
+    border-bottom: 1px solid dimgray;    
+}
+
+.judgeMessage {
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+tr.highlightwarning td {
+    background-color: #FF8533;
+    border-bottom: 2px solid black;    
+}
+
+tr.lined td {
+    border-bottom: 1px solid dimgray;     
+}

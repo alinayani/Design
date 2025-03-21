@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'DINPro';
+    src: url('../fonts/dinp/DINPro-Medium.eot');
+    src: url('../fonts/dinp/DINPro-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/dinp/DINPro-Medium.woff2') format('woff2'),
+    url('../fonts/dinp/DINPro-Medium.woff') format('woff'),
+    url('../fonts/dinp/DINPro-Medium.ttf') format('truetype'),
+    url('../fonts/dinp/DINPro-Medium.svg#DINPro-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('../fonts/dinp/DINPro-Bold.eot');
+    src: url('../fonts/dinp/DINPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/dinp/DINPro-Bold.woff2') format('woff2'),
+    url('../fonts/dinp/DINPro-Bold.woff') format('woff'),
+    url('../fonts/dinp/DINPro-Bold.ttf') format('truetype'),
+    url('../fonts/dinp/DINPro-Bold.svg#DINPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Bold.eot');
+    src: url('../fonts/gotham/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/Gotham-Bold.woff2') format('woff2'),
+    url('../fonts/gotham/Gotham-Bold.woff') format('woff'),
+    url('../fonts/gotham/Gotham-Bold.ttf') format('truetype'),
+    url('../fonts/gotham/Gotham-Bold.svg#Gotham-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Light.eot');
+    src: url('../fonts/gotham/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/Gotham-Light.woff2') format('woff2'),
+    url('../fonts/gotham/Gotham-Light.woff') format('woff'),
+    url('../fonts/gotham/Gotham-Light.ttf') format('truetype'),
+    url('../fonts/gotham/Gotham-Light.svg#Gotham-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Book.eot');
+    src: url('../fonts/gotham/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/Gotham-Book.woff2') format('woff2'),
+    url('../fonts/gotham/Gotham-Book.woff') format('woff'),
+    url('../fonts/gotham/Gotham-Book.ttf') format('truetype'),
+    url('../fonts/gotham/Gotham-Book.svg#Gotham-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Medium.eot');
+    src: url('../fonts/gotham/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/Gotham-Medium.woff2') format('woff2'),
+    url('../fonts/gotham/Gotham-Medium.woff') format('woff'),
+    url('../fonts/gotham/Gotham-Medium.ttf') format('truetype'),
+    url('../fonts/gotham/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-Bold.eot');
+    src: url('../fonts/acrobat/Akrobat-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-Bold.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-Bold.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-Bold.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-Bold.svg#Akrobat-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-Light.eot');
+    src: url('../fonts/acrobat/Akrobat-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-Light.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-Light.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-Light.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-Light.svg#Akrobat-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-SemiBold.eot');
+    src: url('../fonts/acrobat/Akrobat-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-SemiBold.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-SemiBold.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-SemiBold.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-SemiBold.svg#Akrobat-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-Regular.eot');
+    src: url('../fonts/acrobat/Akrobat-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-Regular.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-Regular.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-Regular.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-Regular.svg#Akrobat-Regular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-ExtraBold.eot');
+    src: url('../fonts/acrobat/Akrobat-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-ExtraBold.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-ExtraBold.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-ExtraBold.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-ExtraBold.svg#Akrobat-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-Black.eot');
+    src: url('../fonts/acrobat/Akrobat-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-Black.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-Black.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-Black.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-Black.svg#Akrobat-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-ExtraLight.eot');
+    src: url('../fonts/acrobat/Akrobat-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-ExtraLight.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-ExtraLight.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-ExtraLight.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-ExtraLight.svg#Akrobat-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/acrobat/Akrobat-Thin.eot');
+    src: url('../fonts/acrobat/Akrobat-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/acrobat/Akrobat-Thin.woff2') format('woff2'),
+    url('../fonts/acrobat/Akrobat-Thin.woff') format('woff'),
+    url('../fonts/acrobat/Akrobat-Thin.ttf') format('truetype'),
+    url('../fonts/acrobat/Akrobat-Thin.svg#Akrobat-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+

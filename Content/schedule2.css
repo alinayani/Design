@@ -1,0 +1,247 @@
+﻿
+
+          .edit {
+            font-size:13px;    
+            display:none;        
+        }
+ 
+          .panelSelections{
+            margin-left:100px;
+        }
+
+          .panelSelections select {
+    float:left;
+    width:310px;
+    border:1px solid green;
+    margin:20px;
+}
+                 
+        .psoPanel {
+            
+            float:left;
+            display:block;
+            width:350px;  
+            margin-right:15px;                   
+        }
+
+ 
+
+ 
+.allCompetitors {
+    
+    /*right: 0px;
+    width: 100px;    
+    top: 00px;
+    padding:10px;
+    padding-top:10px;
+    height:100%;
+    position: fixed;*/
+    background-color:gainsboro;    
+    float:left;
+    width:100px;
+}
+
+    .allCompetitors.show {
+        width:400px;
+    }
+
+    .allCompetitors .filters {
+        height: 60px;
+    }
+
+    .allCompetitors > .panel {
+        display:none;        
+    }
+
+    .allCompetitors.show > .panel {
+        display:block;               
+    }
+
+    .allCompetitors .list {
+        overflow-y:scroll;
+    }
+
+.psoPanel .header {
+                height:100px;
+            }
+
+            .psoPanel .title {
+                text-align:center;
+                font-size:18px;
+                font-weight:bold;
+            }
+
+        .psoEventCollection {
+               padding-bottom:140px;               
+               border:1px solid gainsboro;            
+        }
+
+        .psoEvent {
+           /*border:1px solid dimgray;            */
+            display:block;
+            padding-top:0px;
+            cursor:move;                      
+            background-color:#C8C8C8;   
+            margin-bottom:10px;
+            overflow:hidden;
+            
+        }
+
+            .psoEvent .header .order {
+                font-size:1.4em;
+            }
+            .psoEvent .header .name {
+                font-size:1.2em;
+            }
+            .psoCompetitor .order {
+                font-weight:bold;
+            }
+
+        .psoEvent:hover .header .edit {
+                display:inline;
+            }
+
+            .psoEvent > div.border {
+                padding-left:2px;
+                padding-right:2px;                 
+
+                /*position:absolute;                
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;*/
+            }
+
+        .psoEvent:hover {
+            background-color:#70B8FF;
+        }
+
+      
+            .psoEvent .header {
+                padding-left:8px;
+                position:relative;
+                overflow:hidden;
+            }
+
+            .psoEvent .header .time {
+                /*position:absolute;
+                top:2px;
+                right:2px;*/
+                font-size:11px;
+                font-weight:bold;
+            }
+
+        .psoEventFooter {
+            
+        }
+
+        .psoCompetitorCollection {  
+            border:1px solid #cfcfcf;            
+            background-color:#efeeef;
+            display:none;
+        }
+
+        .psoCompetitorCollection.show {  
+            display:block;
+        }
+
+      
+        .psoCompetitor {
+            position:relative;
+            display:block;
+           background-color:#efeeef;
+           cursor:move;   
+           overflow:hidden;
+        }
+
+            .psoCompetitor:hover .edit {
+                display:inline;
+            }
+
+            .psoCompetitor > div {
+
+                padding-left:10px;                
+                position:absolute;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+            }
+
+        .psoCompetitor:hover, .psoCompetitor.odd:hover {            
+           background-color:white;           
+        }
+
+            .psoCompetitor.warning {
+                font-weight:bold;
+                color:red;
+            }
+
+        .timeTable {
+            float:left;
+            margin-top:100px;
+            padding-right:20px;
+        }
+
+            .timeTable .timeSlot {
+                color:#5f5f5f;
+                font-weight:bold;
+            }
+
+            .timeTable .timeSlot.flag {
+                      
+                color:#3c85cf;
+            }
+
+            .border {
+                border:1px solid #9d9d9d;     
+            }
+
+            .timeTable .timeSlot .border {
+                border:none;
+                border-top:1px solid lightgray;     
+            }
+
+        .tools {
+            margin-bottom:30px;            
+        }
+
+            .tools button {
+                padding:5px;
+            }
+
+        button {
+            display:inline-block;
+            margin-right:20px;
+        }
+        
+
+ .prevent {
+    cursor:default;
+}
+ 
+.psoEvent.locked {
+    cursor:default;
+    background-color:#8e8e8e;
+}
+
+.psoCompetitor.odd {    
+    background-color:rgb(233, 233, 233);
+}
+
+
+.psoCompetitor.locked {
+    cursor:default;
+    background-color:#cfcfcf;
+}
+
+
+
+.psoEvent.isDirty {    
+    /*background-color:red;*/
+}
+
+.psoCompetitor.isDirty {    
+    /*background-color:red;*/
+}
+

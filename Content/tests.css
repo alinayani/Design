@@ -1,0 +1,165 @@
+﻿
+
+/*$green:#26a226;*/
+
+
+/********************* BEGIN: TEST LIST ***********************/
+
+.test {
+    /*border:1px solid gainsboro;*/
+        
+    position:relative;    
+    padding:10px;
+    -webkit-border-radius: 1px;    
+    -moz-border-radius: 1px;    
+    border-radius: 1px;
+    
+    margin-left:10px;
+    border-bottom: 1px solid gainsboro;
+     
+    border-top:1px solid gainsboro;
+    margin-top:-1px;   
+    
+}
+
+    .test.unlocked {
+        -webkit-box-shadow: 3px 3px 10px 0 rgba(154,154,154,154);
+        box-shadow: 3px 3px 10px 0 rgba(154,154,154,154);
+        background-color:white;        
+        padding:10px;    
+        padding-left:20px;
+        line-height:25px;
+        margin-left:35px;
+        margin-right:0px;
+        width: 520px;    
+        border-color:transparent;
+        margin-bottom:10px;
+        margin-top:10px;
+    }
+
+    .test.pass {
+        
+        border-right:1px solid gainsboro;
+        border-left:1px solid gainsboro;
+        background-color:white;
+    }
+
+    .test:hover {
+        background-color:white;
+        
+        
+    }
+
+    .test .name a {
+        text-align:center;
+        font-size:13px;
+        display:block;
+        margin-top:10px;        
+    }
+    
+    .test .name {
+        font-weight:bold;                
+        font-size:1.3em;
+        display:inline-block;     
+        /*width:230px;   */
+        width:230px;
+    }
+
+    .test .writtenDetails {        
+        display:inline-block;                
+        vertical-align:top;
+        margin-left:20px; 
+        text-align:center;        
+    }
+
+    .test .writtenDetails .date, .test .videoDetails .date {        
+        font-size:11px;        
+        line-height:initial;
+        text-align:center;
+    }
+
+    .test .title {        
+        font-size:13px;
+    }
+
+    .test .videoDetails {        
+        display:inline-block; 
+        vertical-align:top;       
+        margin-left:30px;
+    }
+
+    .test div.videoDetails div.progressBar {
+        border:1px solid dimgray;
+        width:140px;
+        display:block;
+        height:25px;
+        position:relative;
+    }
+
+        .test div.videoDetails div.progressBar div.fill {
+            width:20%;
+            height:100%;
+            /*background-color:#26a226;*/
+            background-color: #3aae3a;            
+            background-color: lightblue;
+        } 
+
+        .test.pass div.videoDetails div.progressBar div.fill {
+            background-color: #6ac96a;
+        } 
+    
+    .test div.writtenDetails div.status {
+        display:inline-block;           
+        font-weight:600;     
+    }
+
+        .test div.writtenDetails div.status.passed {
+            color:#26a226;            
+        }
+
+    .test .date {    
+        font-weight:normal;
+        font-size:13px;        
+    }
+
+    .test.pass .date {
+        /*color:#26a226;        */
+    }
+
+    .test.fail .status a {        
+        border:3px solid #26a226;
+        background-color: #7ac0da;
+        
+    }
+
+
+    .test.pass a.status  {
+        text-decoration:none;
+        margin:0px;
+    }
+
+    
+    .test .description {
+        
+    }
+
+    .test .actions {
+        position:absolute;
+        right:15px;
+        top:15px;
+    }
+
+  
+
+    /*************** END: TEST LIST ********************/
+
+    /************* BEGIN: TEST START ***********************/
+
+
+
+.wizardBox {
+    width: 910px;
+    margin: auto;
+    border: 2px solid gray;
+    padding:20px;
+}

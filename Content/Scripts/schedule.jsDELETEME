@@ -1,0 +1,582 @@
+﻿
+
+
+function testViewBag() {
+
+    $.ajax({
+        type: "POST",
+        url: "Schedule/CompetitorList/",
+        data: { eventId: 1 },
+        success: function (jsReturnArgs) {
+
+            $("#noEventCompetitorList").find(".competitorListPartial").replaceWith(jsReturnArgs);            
+        },
+        error: function (errorData) { onError(true, errorData); }
+    });
+
+}
+
+function eventSelectorClicked(eventid) {
+     
+    //> Unselect ALL Events    
+    //var msg = $('.eventPartial:not(#EventBody' + eventid + ')')
+//        .find('.eventBody')
+      //  .attr('class');
+    //alert('hey ' +msg);
+
+    $('.eventPartial:not(#EventBody' + eventid + ')').find('.eventBody.selected').each(function () {
+
+        //alert('UN-SELECT: ' + $(this).attr('class'));
+        $(this).removeClass('selected');
+        $(this).addClass('unselected');
+    });
+
+    //$('.eventBody.selected').not('.Event' + eventid).switchClass('selected', 'unselected', 1000, 'easeInOutQuad');
+
+    $('#Event' + eventid).find('.eventBody').each(function (i, o) {
+        //alert('SELECT: ' + $(this).attr('class'));
+        $(this).removeClass('unselected');
+        $(this).addClass('selected');
+    });    
+}
+
+   
+
+function testJQuery() {
+
+    var number = $('.Event1').find('.competitorList > table:first').find("tr:visible").length;
+    alert(number);
+}
+
+function toggletableclass() {
+            
+    $("#events .full").each(function () {
+        $(this).attr('class', 'temp');
+    });
+
+    $("#events .full").each(function () {                
+        $(this).attr('class', 'temp');                                
+    });
+
+    $("#events .short").each(function () {
+        $(this).attr('class', 'full');
+    });
+
+    $("#events .temp").each(function () {
+        $(this).attr('class', 'short');
+    });
+
+}
+
+function removeAllHighlighFlash() {
+    $("td.highlightFlash").removeClass("highlightFlash").stop(true, true);
+}
+
+function highlightFlash(element, removeAll) {
+            
+    if (removeAll) {
+        removeAllHighlighFlash();
+    }
+            
+    $(element).find("td").addClass("highlightFlash");            
+}
+
+function highlightCompetitorRows(competitorId, hasEvent ) {
+
+    removeAllHighlighFlash();
+        
+    $(".competitorRow" + competitorId).each(function (i, o) {
+
+        if (hasEvent) {
+            $(this).removeClass('hasEvent');
+            $(this).addClass('hasEvent');
+        }
+        else if (!hasEvent)
+        {
+            $(this).removeClass('hasEvent');
+        }
+        
+        highlightFlash($(this), false);
+    });
+}
+
+//> HACK!? Use the Return Content to strip out the ID of the new competitor that was added to the database
+function getModalResultId() {
+    return $("#modalDialogContent").stop(true, true).text()
+     .replace(/(\r\n|\n|\r)/gm, "")
+     .replace(/ /g, '');
+}
+
+function removeEvent(eventId) {
+
+    eventSelectorClicked(eventId);
+
+    showLoadingModalDialog('Requesting Delete', null);
+
+    $.ajax({
+        type: "POST",
+        url: "Schedule/RemoveEvent/",
+        data: { eventId: eventId },
+        success: function (jsReturnArgs) {
+            closeModalDialog();
+
+            if (jsReturnArgs.Success == 1) {
+                $("#Event" + eventId).remove();
+                reorderEventsVisually(null);
+            }
+            else {
+                alert(jsReturnArgs.Message);
+            }
+            
+        },
+        error: function (errorData) { onError(true, errorData); }
+    });
+}
+
+function createEventSuccess(eventId, orderNumber, data) {
+    
+    eventId = getModalResultId();
+        
+    $("#modalDialogContent").html("Refreshing Screen...");
+    
+    $.ajax({
+        type: "POST",
+        url: "Schedule/Event/",
+        data: { id: eventId },
+        success: function (jsReturnArgs) {
+
+            // Find the EventPartial Div
+            $(".eventListPartial").find(".eventPartial").each(function (i, o) {
+                if (i + 1 == orderNumber)
+                {
+                    $(jsReturnArgs).insertBefore($(this));
+
+                  //  alert('insert before : ' + data);
+                }
+            });
+
+            if ($(".eventListPartial").find(".eventPartial").length == 0) {
+                $(jsReturnArgs).appendTo(".eventListPartial");
+                //alert('insert at end');
+            }
+
+            orderNumber = 1;
+            //> Update OrderNumber based on DOM Location
+            $(".eventOrder").each(function (i, o) {
+                $(this).text(orderNumber);
+                orderNumber = orderNumber + 1;
+            });
+
+            eventSelectorClicked(eventId);
+
+            $("#modelDialogContent").html('Success!');
+            closeModalDialog();
+        },
+        error: function (errorData) { onError(true, errorData); }
+    });
+}
+
+
+function updateEventSuccess(eventId, orderNumber, data) {
+
+    if (eventId == 0) {
+
+        createEventSuccess(eventId, orderNumber, data);
+        return;
+    }
+        
+    $("#modalDialogContent").html("Refreshing Screen...");
+
+    $.ajax({
+        type: "POST",
+        url: "Schedule/EventHeader/",
+        data: { id: eventId },
+        success: function (jsReturnArgs) {
+
+            //> Replace the Event Header with the updated Partial View from the server                    
+            $("#Event" + eventId + " .eventHeaderPartial").replaceWith(jsReturnArgs).stop(true, true);
+            //var element = $("div.Event" + eventId + " > div.eventHeaderPartial");
+            
+            eventSelectorClicked(eventId);
+            
+            closeModalDialog();
+        },
+        error: function (errorData) { onError(true, errorData); }
+    });
+}
+
+function changeEventOrder(action, eventId, orderNumber)
+{
+    if (action == 'Down') {
+        
+        var nextEvent = $("#Event" + eventId).next('.eventPartial');
+        if (!$(nextEvent).length) {
+            alert('Cannot move this Event down');
+            return false;
+        }        
+    }
+    else if (action == 'Up') {
+        var prevEvent = $("#Event" + eventId).prev('.eventPartial');
+        if (!$(prevEvent).length) {
+            alert('Cannot move this Event up!');
+            return;
+        }        
+    }
+
+    else {
+        alert('No function for this action');
+        return;
+    }
+       
+        
+        showLoadingModalDialog('Loading', null);
+
+        $.ajax({
+            type: "POST",
+            url: "Schedule/ChangeEventOrder/",
+            data: { action: action, eventId: eventId, orderNumber: orderNumber },
+            success: function (jsReturnArgs) {
+
+                closeModalDialog();
+
+                if (jsReturnArgs.Success == 1) {
+                    
+                    if (action == "Up")
+                    {
+                        reorderEventUp(eventId);
+                    }
+                    else if (action == "Down")
+                    {
+                        reorderEventDown(eventId);
+                    }
+                }
+                else {
+                    alert(jsReturnArgs.Message);
+                }                
+            },
+            error: function (errorData) { onError(true, errorData); }
+        });
+    
+
+}
+
+function reorderEventDown(eventId) {
+        
+    //> Guard.IsLastEvent?
+    var eventB = $("#Event" + eventId).next('.eventPartial');
+    if (!$(eventB).length) {        
+        return false;
+    }
+            
+    //> remove the event from the DOM
+    var eventA = $("#Event" + eventId);
+    $(eventA).remove();
+
+    //> add it back in the right place    
+    $(eventA).insertAfter(eventB);
+
+    reorderEventsVisually(eventId);
+}
+
+function reorderEventUp(eventId) {
+
+    //> Guard.IsFirstEvent?
+    var eventB = $("#Event" + eventId).prev('.eventPartial');
+    if (!$(eventB).length) {
+        return;
+    }
+
+    //> remove the event from the DOM
+    var eventA = $("#Event" + eventId);
+    $(eventA).remove();
+
+    //> add it back in the right place    
+    $(eventA).insertBefore(eventB);
+
+    reorderEventsVisually(eventId);
+}
+
+function reorderEventsVisually(eventId) {
+    var orderNumber = 1;
+    //> ReOrder all the Events (Visually)
+    $(".eventOrder").each(function (i, o) {
+        $(this).text(orderNumber);
+        orderNumber = orderNumber + 1;
+    });
+
+    eventSelectorClicked(eventId);
+}
+
+function refreshCompetitorList() {
+            
+        var newId = getModalResultId();
+
+        $("#modalDialogContent").html("Refreshing Competitor List... ("+newId+")");
+
+        $.ajax({
+            type: "POST",
+            url: "Schedule/CompetitorList/",
+            data: { eventId : 0 },
+            success: function (jsReturnArgs) {
+            
+                //> Replace the entire list!
+                $("#noEventCompetitorList").html(jsReturnArgs);
+        
+                var selector = ".competitorRow" + newId;
+                //alert(selector);
+                var element = $(selector);
+
+                //alert($(selector).attr('class'));
+
+                highlightFlash(element);
+
+                //$("#modelDialogContent").html(jsReturnArgs);
+                $("#modelDialogContent").html('Success!');
+
+                closeModalDialog();
+
+            },
+            error: function (errorData) { onError(true, errorData); }
+        });
+    }
+
+    function updateCompetitorSuccess(competitorId, data) {
+        
+        if (competitorId == 0)
+        {                
+            refreshCompetitorList();
+            return;
+        }
+
+        $("#modalDialogContent").html("Refreshing Screen...");
+                        
+        $.ajax({
+            type: "POST",
+            url: "Schedule/Competitor/",
+            data: { id: competitorId},
+            success: function (jsReturnArgs) {
+               
+                //> Replace the Row with the updated Partial View from the server                    
+                //$(".competitorRow" + competitorId).replaceWith(jsReturnArgs).stop(true, true);
+
+                $(".competitorRow" + competitorId).each(function (i, o) {                    
+                    $(this).replaceWith(jsReturnArgs).stop(true, true);
+                });
+
+                removeAllHighlighFlash();
+                $(".competitorRow" + competitorId).each(function (i, o) {
+                                                            
+                    highlightFlash($(this), false);
+                });                              
+
+                //$("#modelDialogContent").html(jsReturnArgs);
+                $("#modelDialogContent").html('Success!');
+
+                closeModalDialog();
+                    
+            },
+            error: function (errorData) { onError(true, errorData); }                
+        });
+                    
+    }
+    /*
+    function newcompetitor() {
+                
+        $.ajax({
+            type: "GET",
+            url: "Schedule/GetNewUserPartialView/",                
+            success: function (jsReturnArgs) {
+    
+                //if (jsReturnArgs.Status === 300) { //300 is an arbitrary value I just made up right now
+                //  showPopup("You do not have access to that.");
+                //}
+    
+                $("#modelDialogContent").html(jsReturnArgs.ViewString); //the HTML I returned from the controller
+                window.location = document.getElementById('openModelhrefID').href;
+    
+            },
+            error: function (errorData) { onError(true, errorData); }
+        });
+    }*/
+
+    function reorderTable(table) {
+        
+        //alert('REORDER: '+ $(table).attr('class') + ' : ' + $(table).find('tbody:last').find("tr:visible").length);
+
+        $(table).find('tbody:last').find("tr:visible").each(function (i, o) {
+
+            var orderNumber = i + 1;
+
+            $(this).find(".orderNumber").html(orderNumber);
+
+            $(this).removeClass('evenRow');
+            $(this).removeClass('oddRow');
+            if (orderNumber % 2 == 0) { $(this).addClass('evenRow'); }
+            else { $(this).addClass('oddRow'); }
+
+            $(this).find(".orderNumber").html(orderNumber);
+
+        });
+    }
+
+    function removecompetitor(id) {
+           
+        var eventId = getEventIdFromCompetitorId(id);
+        eventSelectorClicked(eventId);
+
+        showLoadingModalDialog('Loading', null);
+            
+        //> Run the Ajax Call after the UI has been updated. 
+        $.ajax({
+            type: "POST",
+            url: "Schedule/UpdateCompetitorEvent/",
+            data: { competitorId: id, eventId: 0 },
+            success: function (jsReturnArgs) {
+
+                highlightCompetitorRows(id, null);
+
+                closeModalDialog();
+
+                if (jsReturnArgs.Success == 0) {
+                    
+                    alert(jsReturnArgs.Message);
+                }
+                else {
+                    removeCompetitorClientSide(id);                    
+                }                
+            },
+            error: function (errorData) { onError(true, errorData);
+            }
+        });
+
+    }
+
+    function getEventIdFromCompetitorId(competitorId) {
+        return $('#events .competitorRow' + competitorId).closest('.eventBody').attr('data-id')
+    }
+
+    function removeCompetitorClientSide(id) {
+
+        var orderNumber = $('table.full > tbody:last').find("tr:visible").length
+
+        // Save Contents        
+        var rowHtml = $("<tr />").append($(".competitorRow" + id).clone()).html();
+        
+        var eventTable = $(".competitorRow" + id).closest('table');
+
+        //> Remove from Event
+        $(".competitorRow" + id).replaceWith("");
+
+        //alert('what');
+
+        //> Add row to end of competitors List
+        $('table.full > tbody:last').append(rowHtml);
+
+        reorderTable(eventTable);
+        reorderTable('table.full');
+
+        highlightCompetitorRows(id, false);        
+    }
+
+    function addEvent(id) {
+
+
+    }
+
+    function addCompetitor(id) {
+               
+
+        var eventid = $('.eventBody.selected').attr('data-id');
+
+        if (eventid == null) {
+            alert('Please select an Event before using this feature');
+            return;
+        }
+                
+        showLoadingModalDialog('Loading', null);
+            
+        //> Run the Ajax Call after the UI has been updated. 
+        $.ajax({
+            type: "POST",
+            url: "Schedule/UpdateCompetitorEvent/",
+            data: { competitorId: id, eventId: eventid },
+            success: function (jsReturnArgs) {
+                    
+                highlightCompetitorRows(id, null);
+                closeModalDialog();
+
+                if (jsReturnArgs.Success == '0') {                    
+                    alert(jsReturnArgs.Message);                    
+                }
+                else {
+
+                    addCompetitorClientSide(id, eventid, jsReturnArgs.OrderNumber);                             
+                }                
+            },
+            error: function (errorData) { onError(true, errorData); }
+        });
+
+    }
+
+    function addCompetitorClientSide(id, eventid, orderNumber) {
+        
+        var eventTable = $('#Event' + eventid).find('.competitorListPartial > table:first');
+
+        //orderNumber = $(eventTable).find('tbody:last').find("tr:visible").length + 1;
+
+        // Save Contents
+        var rowHtml = $("<tr />").append($(".competitorRow" + id).clone()).html();
+
+        // Remove from List
+        $(".competitorRow" + id).replaceWith("");
+
+        // Add it to the event, at the correct Order Location!
+        var tbody = $(eventTable).find('tbody:last');
+        var tr = $(tbody).find('tr:nth-child(' + orderNumber + ')')
+
+        if (tr.length) {
+            $(rowHtml).insertBefore($(tr))
+        }
+        else {
+            tbody.append(rowHtml);
+        }
+
+        reorderTable('table.full');
+        reorderTable(eventTable);
+        
+        highlightCompetitorRows(id, true);        
+    }
+               
+
+    function test(action)
+    {      
+
+        var juggle = [];
+        var user = [];
+        var event = [];
+        var competitor = [];
+        
+        // Get Juggle Users
+        $('#juggleusers input:checkbox:checked').each(function () { juggle.push($(this).attr("competitorid")); });
+        // Get List Users
+        $('#listusers input:checkbox:checked').each(function () { user.push($(this).attr("competitorid")); });
+        // Get Competitor Users
+        $('div.competitor input:checkbox:checked').each(function () { competitor.push($(this).attr("competitorid")); });
+        // Get Events
+        $('div.event input:checkbox:checked').each(function () { event.push($(this).attr("eventid")); });
+
+        var master;
+
+        master = {
+            'Action': action,
+            SelectedJuggleUsers: juggle,
+            SelectedListUsers: user,
+            SelectedCompetitors: competitor,
+            SelectedEvents: event
+        };
+                
+        $.ajax({ url: "Schedule/ButtonClick", type: "POST", data: $.toDictionary(master)});
+        
+    }
+         
+

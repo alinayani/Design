@@ -1,0 +1,186 @@
+﻿
+        
+body {
+        padding:0;        
+        /*margin-bottom:100px;*/
+
+}
+
+.horizontal-group{
+
+    margin-top:30px;  
+
+}
+
+.horizontal-bar{
+     display: inline-block;
+    width:515px;
+    height:20px;
+    background-color:#c2c2c2;
+    box-shadow: 0 0 7px 1px #a6a6a6;     
+    margin:0 auto;  
+
+}
+
+.horizontal-bar-element{
+    display: inline-block;
+    width:5px;
+    height:20px;
+    
+
+    background-color:#222222;
+    box-shadow: 0 0 7px 1px #a6a6a6;     
+
+}
+
+.eventName {    
+    font-size: 2.8em;
+    font-weight: bold;            
+}
+
+
+.content-wrapper {      
+
+       padding-left:50px;
+       padding-right:50px;
+}
+
+.content {
+
+   background-image: url('../Images/psowatermark.jpg');
+   background-repeat:no-repeat;
+   /*background-attachment: fixed;
+       border:1px solid red;
+       */
+   
+   background-position:top;         
+   
+}
+
+
+.content.Print {   
+  
+   min-height:1200px;
+   overflow: visible;   
+   background-size:100%;
+   margin:auto;   
+   font-size:18px;
+   font-family:Arial;
+   font-weight:normal;
+
+}
+
+.content.View {         
+   min-height:800px;   
+   background-size:100%;
+   font-size:1em;   
+   max-width: 750px;
+   margin:auto;
+   font-family:Arial;   
+}
+
+.competitorName {    
+    font-size: 3em;
+    font-weight: bold;    
+}
+
+.logo {
+    height:130px;
+    width:130px;
+    margin-bottom:20px;
+    /*
+        width:100px;
+    vertical-align:text-top; 
+    position:absolute;
+    left:0;        
+    float:left; */    
+    vertical-align:middle;
+}
+
+.logo.Print {
+    height:150px;
+     width:150px;         
+     /*top:-40px;*/
+}
+ 
+.competitorEventName {    
+    font-size: 2em;
+    font-weight: bold;                 
+    margin-left:auto;
+    margin-right:auto;        
+}
+
+.header {
+    
+    margin-top: 2em;
+    margin-left:auto;
+    margin-right:auto;    
+    /*position:relative;*/    
+    border-bottom:1px solid dimgray;
+}
+
+    /*.header.View {
+        width:600px;
+    }*/
+
+.printDate {    
+    font-family: Calibri;
+}
+
+table {
+    margin-top:1em;
+    margin-left:auto;
+    margin-right:auto;
+    border-spacing: 0;            
+    border-collapse:collapse;
+    border: 2px solid black;
+}
+
+table.scoreSheet td {        
+    margin:0px;            
+    padding:4px;
+    border: 1px solid black;
+    font-family: Calibri;                 
+         
+}
+
+tr.eventCompetitorScores {
+    border-bottom:1px solid lightgray;
+}
+
+input[type=text] {
+    width:50px;
+}
+.placement {                        
+    font-weight:bold;            
+    width:2em; 
+    position:relative; 
+    margin:auto; 
+    text-align:center;             
+}
+       
+td.number {        
+    text-align:center;         
+}
+
+    th {            
+    padding:4px;
+    border: 1px solid black;
+    font-family: Calibri;
+}
+
+.notes.View {    
+    margin:auto; 
+    font-family:Calibri;
+}
+
+.notes.Print {    
+    margin:auto;     
+    font-family:Calibri;
+ /*   border:5px solid red;*/
+}
+
+
+.footer{
+    text-align:center;
+}
