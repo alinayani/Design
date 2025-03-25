@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta property="og:image" content="path/to/image.jpg">
+        <title>Judge Index - Pole Sport Organization, LLC</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link href="Content/fonts.css" rel="stylesheet"/>
+<link href="Content/site.css" rel="stylesheet"/>
+<link href="Content/test.css" rel="stylesheet"/>
+<link href="Content/judgescore.css" rel="stylesheet"/>
+<link href="Content/modaldialog.css" rel="stylesheet"/>
+
+        <script src="Scripts/modernizr-2.6.2.js"></script>
+
+        
+    <link href="Content/themes/base/jquery.ui.core.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.resizable.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.selectable.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.accordion.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.autocomplete.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.button.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.dialog.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.slider.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.tabs.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.datepicker.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.progressbar.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.theme.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="Content/Judging.css">
+    <link rel="stylesheet" type="text/css" href="Content/toastr.css">
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>     -->
+    <script type="text/javascript" src="Scripts/swfobject.js"></script>
+
+
+    <style>
+
+        .debug {
+            position: fixed;
+            left: 0;
+            top: 0;
+            border: 1px solid red;
+            background-color: whitesmoke;
+        }
+
+        .leftPane {
+            width: 50%;
+            float: left;
+        }
+
+        .rightPane {
+            width: 50%;
+            max-width: 450px;
+            float: left;
+        }
+
+        .pageBody {
+            width: 100%;
+        }
+
+        <!-- .comments-container div b{ -->
+            <!-- font-weight: bold !important; -->
+        <!-- } -->
+
+        <!-- .event_progress__content > .block_table__competitor div { -->
+            <!-- margin-bottom: 10px; -->
+        <!-- } -->
+
+        <!-- .event_progress__content { -->
+            <!-- width: 75% !important; -->
+        <!-- } -->
+
+        <!-- .olul > ol > li { -->
+            <!-- list-style: decimal; -->
+        <!-- } -->
+
+        <!-- .olul li > ul { -->
+            <!-- font-weight: bold; -->
+            <!-- width: 100%; -->
+            <!-- list-style: lower-alpha; -->
+            <!-- margin-left: 20px; -->
+        <!-- } -->
+
+        <!-- .olul li > ul > li { -->
+            <!-- width: max-content; -->
+            <!-- max-width: 95%; -->
+            <!-- padding: 5px; -->
+        <!-- } -->
+
+        <!-- .olul li > ul > li > span { -->
+            <!-- font-weight: normal; -->
+        <!-- } -->
+
+        <!-- .button-section { -->
+            <!-- width: 100%; -->
+            <!-- margin-top: 20px; -->
+        <!-- } -->
+
+        <!-- .button { -->
+            <!-- width: 100%; -->
+            <!-- display: flex; -->
+            <!-- justify-content: space-between; -->
+            <!-- align-items: center; -->
+            <!-- border: 2px solid #ccc; -->
+            <!-- padding: 15px; -->
+            <!-- border-radius: 8px; -->
+            <!-- cursor: pointer; -->
+            <!-- font-size: 16px; -->
+            <!-- font-weight: bold; -->
+            <!-- text-align: left; -->
+            <!-- transition: 0.3s; -->
+            <!-- margin-bottom: 2%; -->
+        <!-- } -->
+
+        <!-- .button:hover { -->
+            <!-- border-color: #007bff; -->
+        <!-- } -->
+
+        <!-- .button .start-btn { -->
+            <!-- background: #007bff; -->
+            <!-- color: white; -->
+            <!-- padding: 8px 15px; -->
+            <!-- border-radius: 20px; -->
+            <!-- font-size: 14px; -->
+            <!-- border: none; -->
+            <!-- cursor: pointer; -->
+        <!-- } -->
+
+        <!-- .button .start-btn.disabled { -->
+            <!-- background: #ccc; -->
+            <!-- cursor: not-allowed; -->
+        <!-- } -->
+
+        <!-- .btn.disabled { -->
+            <!-- pointer-events: none; -->
+            <!-- opacity: 0.6; -->
+            <!-- cursor: not-allowed; -->
+        <!-- } -->
+
+        <!-- .normal{ -->
+            <!-- font-weight: normal; -->
+        <!-- } -->
+    </style>
+
+
+        <!--Main-Style, Fonts-->
+        <link href="Content/v1/css/main.css" rel="stylesheet"/>
+<link href="Content/v1/css/fonts.css" rel="stylesheet"/>
+
+    </head>
+    
+    <body>
+        <!--Wrapper-->
+        <div id="top" class="wrapper">
+            
+            <!--start Header-->
+            <header style="z-index: 7">
+                <div class="container-fluid">
+                    <div class="row" style="margin:auto;">
+                        <div class="col-md-4 col-lg-4"><a href="#" class="logo"><img src="Content/v1/img/logo2.png" alt=""></a></div>
+                        <div class="col-md-8 col-lg-8"></div>
+                    </div>
+                    <div class="row" style="margin:auto; background: black; padding: 15px; color: white;">
+                        <div class="col-sm-6">
+                            <div class="data_system__description">
+                                <span class="title">EVENT :</span>
+                                <span class="name" style="text-transform: uppercase; font-weight: bold;">
+                                    303 DTF (Down to Flow) Level 1 Junior/Senior
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="data_system__description" style="text-align: right;">
+                                <span class="title">JUDGE :</span>
+                                <span class="name" style="text-transform: uppercase; font-weight: bold;">
+judge1                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--end Header-->
+
+            
+    
+
+
+            <div class="bodyMessage"></div>
+
+            
+
+
+
+                <section class="j-system event_progress">
+                    <div class="container comments-container">
+                        <div class="row" style="margin-bottom: 30px;">
+                            <div class="event_progress__content">
+                                <div class="block_table__competitor ">
+                                    <div>Welcome to the PSO Judging system. Each Event will consist of two parts: <b>Comments</b> and <b>Ranking by Element.</b></div>
+                                    <div style="margin-top: 20px;">INSTRUCTIONS</div>
+									<div class="olul">
+                                        <ol>
+                                            <li>
+                                                Complete the Comments section while each competitor performs by adding <b>2 things they did well</b> and <b>2 things they could improve</b>. Be sure to give actionable and specific feedback where possible.
+                                                <ul><li><b>Optional:</b> <span>Use the Comment Helper Tool to quickly add definitions of specific elements to your comment text box. You can add more specific and customized feedback in addition to this.</span></li></ul>
+                                            </li>
+                                            <li>Complete the Ranking by Element section by dragging and dropping each competitor in order of best demonstrated from top to bottom. You must save comments for the first competitor before you can start this section. After that, you can alternate between sections as you please.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container button-section">
+                        <div class="button">
+                            <span class="normal">Comments</span>
+                            <span class="start-btn"><a class="btn" href="/Judge?eventId=26449&amp;competitorId=0&amp;commentsSection=True">Start</a></span>
+                        </div>
+                        <div class="button">
+                            <span class="normal">Ranking By Element</span>
+                            <span class="start-btn disabled"><span class="btn disabled">Start</span></span>
+                        </div>
+                    </div>
+                </section>
+                <!--end section.scoring-->
+
+
+
+            <!--start footer-->
+            <footer>
+                <p class="sub">© 2025 POLE SPORT ORGANIZATION, LLC.  ALL RIGHTS RESERVED. </p>
+                
+                <!-- TODO :: Ask about it
+                <div class="content-wrapper">
+
+                    <div class="float-left">
+                        <div style="color: #e2e2e2;">
+                            User: judge1
+                            Status: CommentsSection
+                            EventId: 26449
+                            CompetitorId: 
+                        </div>
+                        <div>
+                            <div class="refresh-indicator" style="margin-bottom: 15px;"></div>
+                            
+                        </div>
+                        <br/><br/><br/><br/><br/><br/><br/>
+                    </div>
+                </div>
+                -->
+                
+            </footer>
+            <!--end footer-->
+        </div>
+    <!--Wrapper end-->
+
+        <script src="Scripts/jquery-2.0.3.js"></script>
+
+        <script src="Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="Scripts/jquery.validate.js"></script>
+<script src="Scripts/jquery.validate.unobtrusive.js"></script>
+
+        <script src="Scripts/custom/modaldialog.js"></script>
+
+        
+
+    <script src="Scripts/jquery-ui-1.10.4.js"></script>
+<script src="Scripts/jquery.caret.js"></script>
+
+    <script type="text/javascript" src="Scripts/toastr.js"></script>
+    <script src="Scripts/knockout-3.0.0.debug.js"></script>
+<script src="Scripts/knockout.mapping-latest.debug.js"></script>
+<script src="Scripts/knockout-sortable-0.8.5.js"></script>
+
+    <script type="text/javascript" src="Scripts/linq.js"></script>
+    <script src="Client/Judge/CompetitorSummary.js"></script>
+<script src="Client/Judge/default.js"></script>
+<script src="Client/Judge/ViewModel.js"></script>
+
+
+<script>
+
+        var refreshTimer = Number('0');
+        var pageJudgingStatus = 'Undefined';
+        var isEditingScore = 'False';
+        var meanScore = Number(0);
+        var MVC_VerifyScoreAgainstMean = 'False';
+
+        var MVC_ConfirmScore = 'False' == 'True';
+        var MVC_DefaultSortby = 'order';
+
+        var pageIsDirty = '';
+
+        var Model;
+
+        var MVC_EventId = '26449';
+        var MVC_EditingCompetitorId = '0';
+        var MVC_InitialData = [{"id":33751,"orderNumber":1,"stageName":"Sexi LexiGlo","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33752,"orderNumber":2,"stageName":"Lady Cat","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33753,"orderNumber":3,"stageName":"LADIEZEE","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33754,"orderNumber":4,"stageName":"Paradox","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33755,"orderNumber":5,"stageName":"Devious","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33756,"orderNumber":6,"stageName":"Anna","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33757,"orderNumber":7,"stageName":"Alison","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false},{"id":33758,"orderNumber":8,"stageName":"Ranielle","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":false,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false}];
+        var MVC_BindTotalScore = false;
+        var keyValueArray = [];
+        var MVC_CriteriaTemplates;
+        var shouldPassCriteria = true;
+        console.log(shouldPassCriteria);
+        //console.log("ali", MVC_EventId, MVC_EditingCompetitorId, MVC_InitialData, Model);
+                
+                    keyValueArray = [
+                        { key: "clarity", value: "Clarity of Concept" },
+                        { key: "stage", value: "STAGE PRESENCE" },
+                        { key: "exec", value: "Quality of Execution" },
+                        { key: "musc", value: "Musicality" },
+                        { key: "flow", value: "FLOW AND FLUIDITY" },
+                        { key: "unique", value: "Uniqueness of Performance" },
+                        { key: "categ", value: "Category Appropriateness" },
+                        { key: "lvl", value: "Level Appropriateness" },
+                        { key: "etiq", value: "Stage Etiquette" }
+                    ];
+                    MVC_CriteriaTemplates = [
+                        new Criteria('Clarity of Concept',
+                            ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
+                            ['Clear concept', 'Engaging message', 'Creative presentation']
+                        ),
+                        new Criteria('Quality of Execution',
+                            ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
+                            ['Smooth execution', 'Accurate timing', 'Confident presentation']
+                        ),
+                        new Criteria('Musicality',
+                            ['Off-beat performance', 'Missed cues', 'Poor synchronization'],
+                            ['Perfect rhythm', 'Accurate cues', 'Great synchronization']
+                        )
+                    ];
+                
+
+        var ytplayer;
+
+        function adminPasswordKeyUp()
+        {
+            //console.log($('#adminPassword').val());
+
+            if ($('#adminPassword').val() == 'adminpassword')
+            {
+                $('#adminButtons').show();
+            }
+            else{
+                $('#adminButtons').hide();
+
+            }
+        }
+
+        $.validator.methods.number = function (value, element) {
+
+            //> Don't complain about fractions with no decimal digits!
+            if (value.endsWith('.'))
+            {
+                value = value.substring(0, value.length-1);
+            }
+
+            return this.optional(element) || !isNaN(value);
+        }
+
+        String.prototype.endsWith = function(suffix) {
+            return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+
+        function stopTab(e)
+        {
+            var evt = e || window.event;
+            if (evt.keyCode == 9)
+            {
+                return false;
+            }
+
+            $('.eventUnlockButton').attr('disabled', 'disabled');
+            $('.eventLockButton').attr('disabled', 'disabled');
+        }
+
+        function onYouTubePlayerReady(playerId) {
+            ytplayer = document.getElementById("myytplayer");
+
+            ytplayer.addEventListener("onStateChange", "onPlayerStateChange");
+        }
+
+        function playYouTubeInPopup (youTubeVideoId)
+        {
+            var height = window.innerHeight - 100;
+
+            //var width = window.innerWidth - 100;
+            //showModalDialogWithContent('Competitor Video','<iframe id="player" type="text/html" width=100% height='+height+'px src="http://www.youtube.com/embed/'+youTubeVideoId+'?enablejsapi=1&autoplay=1&controls=0&modestbranding=1&showinfo=0" frameborder="1"></iframe>');
+            showModalDialogWithContent('Competitor Video', '<div id="ytapiplayer" style="height:'+height+'px; width:100%;">You need Flash player 8+ and JavaScript enabled to view this video.</div>');
+
+            $('div#openModal').addClass('full');
+            $('.modalDialog > div').css('height', window.innerHeight+'px');
+            $('#modalDialogContent').css('height', height+'px');
+
+            var params = { allowScriptAccess: "always", allowFullScreen: "true" };
+            var atts = { id: "myytplayer" };
+
+            var url = "https://www.youtube.com/v/" + youTubeVideoId + "?cc_load_policy=1&controls=0&enablejsapi=1&fs=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&version=3&autoplay=1";
+
+            swfobject.embedSWF(url, "ytapiplayer", "100%", "100%", "8", null, null, params, atts);
+            //> OnYouTubePlayerReady will be fired next
+        }
+
+        function onPlayerStateChange(newState) {
+
+            if (newState == 0) // video has ended
+            {
+                closeModalDialog();
+            }
+            else if (newState == 2) // PAUSED
+            {
+                //alert('you may not pause the video');
+                ytplayer.playVideo();
+            }
+    }
+
+</script>
+
+
+    </body>
+</html>
