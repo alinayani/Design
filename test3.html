@@ -290,21 +290,21 @@
                                 <button data-bind="click: nextCompetitor" class="next">Next</button>
                             </div>
                         </div>
-                        <div class="col-md-12" data-bind="visible: $root.isCompleted">
+                        <div class="col-md-12 finalized-comment" data-bind="visible: $root.isCompleted" >
                             <div class="align-content-md-center">
-                                <div>
+                                <p>
                                     If you need to edit any comments, please do so now.<br />
                                     Please Finalize the comments section by clicking "Finalize" below. <br />
                                     You will not be able to go back to edit comments once you hit "Finalize".
-                                </div>
+                                </p>
                                 <button data-bind="click: finalizeComments">Finalize all competitors comments</button>
                             </div>
                         </div>
-                        <div class="col-md-12" data-bind="visible: $root.isDone">
+                        <div class="col-md-12 comment-done" data-bind="visible: $root.isDone">
                             <div class="align-content-md-center">
-                                <div>
+                                <p>
                                     Thank You! All comments for each competitor have been submitted and finalized.
-                                </div>
+                                </p>
                                 <button disabled class="btn disabled">All comments submitted</button>
                             </div>
                         </div>
@@ -545,11 +545,6 @@
     $(document).ready(function() {
         // Add the class 'no-after' on page load
         $('.j-system .container').toggleClass('no-after');
-
-        // Example: Remove the class 'no-after' on a button click event
-        $('.btn-subm').on('click', function() {
-            $('.j-system .container').toggleClass('no-after');
-        });
     });
 
     // Submit Comments function
@@ -566,11 +561,7 @@
             selectedCompetitorElement.classList.add('saved'); // Add a 'saved' class instead of 'selected-comment'
         }
 
-        // Hide the 'add tag' part after submission (hide only the 'add tag' part)
-        let addTagElement = selectedCompetitorElement.querySelector('.gray-text');
-        if (addTagElement) {
-            addTagElement.style.display = 'none';  // Hides the 'add tag' text
-        }
+        // Do not change the color of "add tag" here
     }
 
     // Function to move to the next competitor and apply the green background
@@ -579,24 +570,37 @@
         let previousCompetitorElement = document.querySelector('.compet_form .spanss.selected');
         if (previousCompetitorElement) {
             previousCompetitorElement.classList.remove('saved'); // Remove green background (if applied)
+            let addTagElement = previousCompetitorElement.querySelector('.gray-text');
+            if (addTagElement) {
+                addTagElement.classList.remove('tag-black'); // Remove black color
+            }
         }
 
         // Proceed to the next competitor (move to the next 'spanss' element)
         let nextCompetitor = getNextCompetitor();
-        if (nextCompetitor) {
+
+        // If there is no next competitor (i.e., last competitor), apply styles to the last competitor
+        if (!nextCompetitor) {
+            let lastCompetitor = document.querySelector('.compet_form .spanss:last-child');
+            if (lastCompetitor) {
+                lastCompetitor.classList.add('selected'); // Select the last competitor
+                lastCompetitor.classList.add('selected-comment'); // Apply green background
+                let addTagElement = lastCompetitor.querySelector('.gray-text');
+                if (addTagElement) {
+                    addTagElement.classList.add('tag-black'); // Change the tag text color to black
+                }
+            }
+        } else {
+            // If there is a next competitor, apply the usual logic
             nextCompetitor.classList.add('selected'); // Select the next competitor
-        }
-
-        // Mark the newly selected competitor as commented by adding the 'selected-comment' class (green background)
-        let selectedCompetitorElement = document.querySelector('.compet_form .spanss.selected');
-        if (selectedCompetitorElement) {
-            selectedCompetitorElement.classList.add('selected-comment'); // Apply green background to new competitor
-        }
-
-        // Hide the 'add tag' part after submission (hide only the 'add tag' part for new competitor)
-        let addTagElement = selectedCompetitorElement.querySelector('.gray-text');
-        if (addTagElement) {
-            addTagElement.style.display = 'none';  // Hides the 'add tag' text for the new competitor
+            let selectedCompetitorElement = document.querySelector('.compet_form .spanss.selected');
+            if (selectedCompetitorElement) {
+                selectedCompetitorElement.classList.add('selected-comment'); // Apply green background to new competitor
+                let addTagElement = selectedCompetitorElement.querySelector('.gray-text');
+                if (addTagElement) {
+                    addTagElement.classList.add('tag-black');  // Change the tag text color to black
+                }
+            }
         }
 
         // Disable the "Next" button until the next comment is submitted
@@ -615,7 +619,7 @@
             return competitors[selectedIndex + 1];
         }
 
-        // If the last competitor is selected, return null (or loop back to the first competitor if desired)
+        // If the last competitor is selected, return null (i.e., no next competitor)
         return null;
     }
 
@@ -623,6 +627,10 @@
     document.querySelector('.btn-subm').addEventListener('click', submitComments);
     document.querySelector('.next').addEventListener('click', nextCompetitor);
 </script>
+
+
+
+
 
 
 

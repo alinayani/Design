@@ -45,6 +45,12 @@
     align-items: center;
 }
 
+.right.completed {
+    background-color: green; /* Set the background to green */
+    color: white; /* Optional: Change text color for better contrast */
+    border-color: green;
+}
+
 .right::before {
     content: "";
     display: inline-block;
@@ -55,6 +61,13 @@
     background-repeat: no-repeat;
     margin-right: 8px; 
 }
+
+.right.completed::before {
+    background-image: url('./icons/Check circle.png'); /* New icon when completed */
+}
+
+
+
 
 
 
@@ -133,44 +146,44 @@
 }
 
 /* Tooltip styling */
-.compet_form .gray-text:hover::after {
-    content: "Add Performer Description"; /* First line of tooltip content */
+/* .compet_form .gray-text:hover::after {
+    content: "Add Performer Description"; 
     position: absolute;
-    top: -90px; /* Adjust this to position the tooltip above the 'add tag' text */
+    top: -90px; 
     left: -130px;
-    color: #333; /* Dark color for text */
-    background-color: rgba(255, 255, 255, 0.9); /* Tooltip background */
-    padding: 8px 12px; /* Padding around the text (top, bottom, left, right) */
-    font-size: 16px; /* Font size for the first line */
-    font-weight: bold; /* Bold font for the first line */
-    border-radius: 5px; /* Rounded corners for the tooltip */
-    white-space: normal; /* Allow line breaks for text */
-    z-index: 9999; /* Ensure the tooltip is above other content */
-    width: 300px; /* Tooltip adjusts based on content width */
-    text-align: center; /* Center the text horizontally */
-    line-height: 1.2; /* Adjust line height for better readability */
-    display: block; /* Ensure it's treated as a block element */
-}
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 8px 12px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 5px;
+    white-space: normal; 
+    z-index: 9999; 
+    width: 300px;
+    text-align: center; 
+    line-height: 1.2; 
+    display: block;
+} */
 
-/* Tooltip second part for the second line */
-.compet_form .gray-text:hover::before {
-    content: "Double Click or Long Press to add tag"; /* Second line of tooltip content */
+
+/* .compet_form .gray-text:hover::before {
+    content: "Double Click or Long Press to add tag"; 
     position: absolute;
-    top: -60px; /* Position this part below the first line */
+    top: -60px; 
     left: -130px;
-    color: #333; /* Dark color for text */
-    background-color: rgba(255, 255, 255, 0.9); /* Tooltip background */
-    padding: 8px 12px; /* Padding around the text (top, bottom, left, right) */
-    font-size: 14px; /* Font size for the second line */
-    font-weight: 400; /* Regular font weight for the second line */
-    border-radius: 5px; /* Rounded corners for the tooltip */
-    white-space: normal; /* Allow line breaks for text */
-    z-index: 9999; /* Ensure the tooltip is above other content */
-    width: 300px; /* Tooltip adjusts based on content width */
-    text-align: center; /* Center the text horizontally */
-    line-height: 1.2; /* Adjust line height for better readability */
-    display: block; /* Ensure it's treated as a block element */
-}
+    color: #333; 
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px; 
+    font-size: 14px; 
+    font-weight: 400;
+    border-radius: 5px;
+    white-space: normal; 
+    z-index: 9999; 
+    width: 300px; 
+    text-align: center;
+    line-height: 1.2; 
+    display: block; 
+} */
 
 
 
@@ -347,6 +360,11 @@
     background-image: none;
 }
 
+/* .show-comment-section .no-after::after {
+    content: none;
+    background-image: none;
+} */
+
 
 .comp-criterias-table button.selected[data-bind*="'didWell'"] {
     background-color: white;
@@ -427,6 +445,81 @@
     border: 1px;
     padding: 8px;
 }
+
+.spanss .gray-text {
+    display: inline !important;  /* Ensure the 'gray-text' remains visible */
+    color: black;
+}
+
+
+/* finalized-comment */
+
+.finalized-comment {
+    padding: 168px 222px;
+}
+.finalized-comment .align-content-md-center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.finalized-comment .align-content-md-center p {
+    text-align: center;
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    font-weight: 400; /* Set font weight to 400 */
+    font-size: 16px; /* Set font size to 16px */
+    line-height: 1.9rem;
+}
+.finalized-comment .align-content-md-center button {
+      background-color: black;
+      color: rgba(245, 245, 245, 1);
+      border-radius: 8px;
+      border: 1px;
+     font-size: 16px;
+      padding: 17px 52px;
+      font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+
+
+/* comment-done */
+
+.comment-done {
+    padding: 230px 385px;
+}
+
+
+.comment-done .align-content-md-center {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    flex-direction: column;
+}
+.comment-done .align-content-md-center  button {
+    background-color: rgba(217, 217, 217, 1);
+      color: rgba(179, 179, 179, 1);
+      border-radius: 8px;
+      border: 1px;
+      font-weight: 400;
+     font-size: 16px;
+      padding: 12px;
+      font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+.comment-done .align-content-md-center {
+    text-align: center;
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    font-weight: 400; /* Set font weight to 400 */
+    font-size: 16px; /* Set font size to 16px */
+}
+
+   
+
+
+
+
+
 
 
 
