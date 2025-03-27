@@ -143,6 +143,9 @@
    border: none;
    margin-bottom: 0%;
  }
+ .container.button-section .button .start-btn a  {
+   background: none;
+ }
 
 
 

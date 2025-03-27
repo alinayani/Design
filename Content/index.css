@@ -665,11 +665,13 @@
     font-size: 16px;
     font-family: Inter, sans-serif ;
     font-weight: 400;
+    background: none;
     text-decoration: none;
 }
 .deesable:not(.disabled) .btn::before {
     color: white;
 }
+
 
 
 
