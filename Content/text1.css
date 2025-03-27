@@ -13,7 +13,7 @@
    padding: 0px !important;
 }
 .j-system .container.comments-container{
-   padding: 148px 0px 118px 0px ;
+   padding: 100px 0px 70px 0px ;
    font-family: 'Inter', sans-serif;
 }
 .j-system .container.comments-container .block_table__competitor b {
@@ -55,6 +55,7 @@
 
 .container.button-section .button span {
    display: inline-flex;
+   padding-left: 15px;
    align-items: center;
 }
 
@@ -73,16 +74,19 @@
 .container.button-section .button.btn2 {
    border-radius: 8px !important;
    padding: 22px;
+   
    border: 1px solid black;
 }
 
 .container.button-section .button .start-btn {
    display: flex;
+   text-transform: uppercase;
    justify-content: center;
    align-items: center;
    background-color: rgba(0, 122, 255, 1);
    padding: 12px 35px;
    color: white;
+   box-sizing: border-box;
    font-family: 'Inter', sans-serif;
    font-weight: 400;
    border-radius: 8px;
@@ -92,6 +96,7 @@
 .container.button-section .button .start-btn.disabled {
    background-color: #ccc;
    color: #666;
+   text-transform: uppercase;
    cursor: not-allowed;
 }
 
@@ -101,13 +106,14 @@
 
 .container.button-section .button .start-btn a {
    color: inherit;
+   padding-left: 15px;
    text-decoration: none;
 }
 
 .container.button-section .button .start-btn::before {
    content: "";
    position: absolute;
-   left: 10px; /* Adjust this for horizontal positioning of the image */
+   left: 30px; /* Adjust this for horizontal positioning of the image */
    top: 50%;
    transform: translateY(-50%); /* Vertically centers the image */
    width: 16px; /* Set the width of the image */
@@ -118,6 +124,7 @@
 }
 
 .container.button-section .button .start-btn.disabled::before {
+   left: 30px;
    background-image: url('./icons/Circle.png'); /* Optional: different image for disabled state */
 }
 .container.button-section .normal {
