@@ -14,7 +14,7 @@
 <link href="Content/test.css" rel="stylesheet"/>
 <link href="Content/judgescore.css" rel="stylesheet"/>
 <link href="Content/modaldialog.css" rel="stylesheet"/>
-
+<link rel="stylesheet" href="./Content/text1.css">
         <script src="Scripts/modernizr-2.6.2.js"></script>
 
         
@@ -159,8 +159,8 @@
             
             <!--start Header-->
             <header style="z-index: 7">
-                <div class="container-fluid">
-                    <div class="row" style="margin:auto;">
+                <div class="container-fluid header" >
+                    <div class="row header-row" style="margin:auto;">
                         <div class="col-md-4 col-lg-4"><a href="#" class="logo"><img src="Content/v1/img/logo2.png" alt=""></a></div>
                         <div class="col-md-8 col-lg-8"></div>
                     </div>
@@ -200,8 +200,8 @@ judge1                                </span>
                         <div class="row" style="margin-bottom: 30px;">
                             <div class="event_progress__content">
                                 <div class="block_table__competitor ">
-                                    <div>Welcome to the PSO Judging system. Each Event will consist of two parts: <b>Comments</b> and <b>Ranking by Element.</b></div>
-                                    <div style="margin-top: 20px;">INSTRUCTIONS</div>
+                                    <p>Welcome to the PSO Judging system. Each Event will consist of two parts: <b>Comments</b> and <b>Ranking by Element.</b></p>
+                                    <div style="margin-top: 20px;" class="into">INSTRUCTIONS</div>
 									<div class="olul">
                                         <ol>
                                             <li>
@@ -216,13 +216,13 @@ judge1                                </span>
                         </div>
                     </div>
                     <div class="container button-section">
-                        <div class="button">
+                        <div class="button btn1">
                             <span class="normal">Comments</span>
                             <span class="start-btn"><a class="btn" href="/Judge?eventId=26449&amp;competitorId=0&amp;commentsSection=True">Start</a></span>
                         </div>
-                        <div class="button">
+                        <div class="button btn2">
                             <span class="normal">Ranking By Element</span>
-                            <span class="start-btn disabled"><span class="btn disabled">Start</span></span>
+                            <span class="start-btn btn2 disabled"><span class="btn disabled">Start</span></span>
                         </div>
                     </div>
                 </section>

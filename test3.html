@@ -581,10 +581,11 @@
 
         // If there is no next competitor (i.e., last competitor), apply styles to the last competitor
         if (!nextCompetitor) {
-            let lastCompetitor = document.querySelector('.compet_form .spanss:last-child');
+            let lastCompetitor = document.querySelector('.compet_form .spanss:nth-last-child(1)');
             if (lastCompetitor) {
-                lastCompetitor.classList.add('selected'); // Select the last competitor
+                lastCompetitor.classList.remove('selected'); // Select the last competitor
                 lastCompetitor.classList.add('selected-comment'); // Apply green background
+                lastCompetitor.classList.add('saved'); // Apply green background
                 let addTagElement = lastCompetitor.querySelector('.gray-text');
                 if (addTagElement) {
                     addTagElement.classList.add('tag-black'); // Change the tag text color to black
