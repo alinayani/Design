@@ -138,6 +138,12 @@
    }
  }
 
+ .container .button-section .no-after .button {
+   padding: 1px 30px;
+   border: none;
+   margin-bottom: 0%;
+ }
+
 
 
 
