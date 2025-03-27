@@ -322,13 +322,13 @@
 .comments-summary .txt1  {
      margin-top: 8px;
      margin-bottom: 40px;
-     height: 19vh;
+     height: 214px;
      
      width: 100%;
 }
 .comments-summary .txt2  {
     margin-top: 8px;
-    height: 19vh;
+    height: 206px;
    
     width: 100%;
 }
@@ -632,13 +632,44 @@
     }
  
 }
+/* @media (min-width:1200px) and (max-width:1620px) {
+      .comments-summary .txt1 {
+         height: 270px;
+    }
+    .comments-summary .txt2 {
+         height: 270px;
+    } 
+} */
+@media (min-width:1200px) and (max-width:1439px) {
+    .comments-summary .txt1 {
+        height: 261px;
+        margin-top: 18px;
+   }
+   .comments-summary .txt2 {
+        height: 261px;
+   } 
+}
+@media (min-width:1024px) and (max-width:1199px) {
+    .comments-summary .txt1 {
+        height: 368px;
+        margin-top: 18px;
+   }
+   .comments-summary .txt2 {
+        height: 368px;
+   } 
+}
+
+
 @media (min-width:1024px) and (max-width:1439px) {
     .comments-summary  {
         width: 100%;
     }
     .j-system.comments .container {
-        min-width: 1171px;
+        min-width: 960px;
     }
+  
+   
+    
 }
 
 /* Adding an image before the text inside the button */
@@ -671,6 +702,11 @@
 .deesable:not(.disabled) .btn::before {
     color: white;
 }
+/* When a button inside .criteria-tabs is active */
+.criteria-tabs button.active {
+    font-weight: 700; /* Apply font weight 700 to the active button */
+}
+
 
 
 
