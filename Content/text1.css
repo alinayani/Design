@@ -1,3 +1,11 @@
+.header-section {
+   width: 100% !important;
+   background-color: #ffffff !important;
+}
+.header-row {
+   padding: 13px 16px;
+}
+
 .event_progress {
    padding: 0px !important;
 }
