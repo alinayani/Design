@@ -5,6 +5,9 @@
 .header-row {
    padding: 13px 16px;
 }
+.data_system__description {
+   padding: 0px 18px;
+}
 
 .event_progress {
    padding: 0px !important;
