@@ -514,6 +514,135 @@
     font-size: 16px; /* Set font size to 16px */
 }
 
+/* Modal Input Field */
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 480px;
+    max-width: 90%;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.modal-body {
+    margin-bottom: 25px;
+}
+
+.modal-body input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-body input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.modal-body input:focus {
+    border-color: #007aff;
+    box-shadow: 0 0 8px rgba(0, 122, 255, 0.3);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.modal-footer button {
+    padding: 12px 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #007aff;
+    color: white;
+    border: 2px solid #007aff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    outline: none;
+}
+
+.modal-footer button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+.modal-footer button:active {
+    transform: translateY(1px);
+}
+
+.modal-footer button:disabled {
+    background-color: #d3d3d3;
+    color: #aaa;
+    border-color: #d3d3d3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ui-widget-header {
+    background: none !important;
+    border: none !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-content .modal-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.modal-content .modal-header h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.modal-body {
+    padding-bottom: 15px;
+}
+
+/* For screens smaller than 1200px (large screens, laptops) */
+/* Desktop (large screens) */
+@media (min-width:1440px) and (max-width:1620px) {
+    .comments-summary  {
+        width: 100%;
+    }
+    .j-system.comments .container {
+        min-width: 1371px;
+    }
+ 
+}
+@media (min-width:1024px) and (max-width:1439px) {
+    .comments-summary  {
+        width: 100%;
+    }
+    .j-system.comments .container {
+        min-width: 1171px;
+    }
+  
+ 
+}
+
+
+
+
+
+
    
 
 

@@ -1,0 +1,127 @@
+.event_progress {
+   padding: 0px !important;
+}
+.j-system .container.comments-container{
+   padding: 148px 0px 118px 0px ;
+   font-family: 'Inter', sans-serif;
+}
+.j-system .container.comments-container .block_table__competitor b {
+   font-weight: bold;
+}
+.j-system .container.comments-container .block_table__competitor p {
+   font-size: 16px;
+   line-height: 1.9em;
+   font-weight: 400;
+}
+.j-system .container.comments-container .block_table__competitor .into {
+   margin-bottom: 15px;
+   font-size: 16px;
+   font-weight: 400;
+}
+.j-system .container.comments-container .block_table__competitor .olul ol {
+   list-style-type: decimal; 
+   padding-left: 20px; 
+   line-height: 1.5em;
+}
+
+.j-system .container.comments-container .block_table__competitor .olul li {
+   margin-bottom: 20px;
+}
+.container.button-section {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 30px; /* Space between the buttons */
+   flex-direction: column;
+}
+
+.container.button-section .button {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+}
+
+.container.button-section .button span {
+   display: inline-flex;
+   align-items: center;
+}
+
+.container.button-section .button .start-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container.button-section .button.btn1 {
+   border-radius: 8px !important;
+   border: 1px solid black;
+   padding: 22px;
+}
+
+.container.button-section .button.btn2 {
+   border-radius: 8px !important;
+   padding: 22px;
+   border: 1px solid black;
+}
+
+.container.button-section .button .start-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 122, 255, 1);
+   padding: 12px 35px;
+   color: white;
+   font-family: 'Inter', sans-serif;
+   font-weight: 400;
+   border-radius: 8px;
+   position: relative; /* Ensure positioning context for the image */
+}
+
+.container.button-section .button .start-btn.disabled {
+   background-color: #ccc;
+   color: #666;
+   cursor: not-allowed;
+}
+
+.container.button-section .button .start-btn.disabled a {
+   pointer-events: none;
+}
+
+.container.button-section .button .start-btn a {
+   color: inherit;
+   text-decoration: none;
+}
+
+.container.button-section .button .start-btn::before {
+   content: "";
+   position: absolute;
+   left: 10px; /* Adjust this for horizontal positioning of the image */
+   top: 50%;
+   transform: translateY(-50%); /* Vertically centers the image */
+   width: 16px; /* Set the width of the image */
+   height: 16px; /* Set the height of the image */
+   background-image: url('./icons/Circle.png'); /* Replace with the actual path to your image */
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.container.button-section .button .start-btn.disabled::before {
+   background-image: url('./icons/Circle.png'); /* Optional: different image for disabled state */
+}
+.container.button-section .normal {
+   font-size: 20px;
+   font-weight: 400;
+   font-family: 'Montserrat', sans-serif;
+}
+@media (min-width:768px) and (max-width:1024px) { 
+   .j-system .container.comments-container {
+      padding: 100px 0px 75px 0px;
+   }
+ }
+
+
+
+
+
+
