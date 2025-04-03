@@ -717,13 +717,8 @@
     padding: 0px 18px;
  }
  
- .event_progress {
-    padding: 0px !important;
- }
- .j-system .container.comments-container{
-    padding: 100px 0px 70px 0px ;
-    font-family: 'Inter', sans-serif;
- }
+
+
  .j-system .container.comments-container .block_table__competitor b {
     font-weight: bold;
  }
