@@ -17,11 +17,15 @@
   .j-system.comments .container {
     width: 100%;
     min-width: 1600px;
+  
+    
+    padding: 29px 20px;
+     }
+  .allborder {
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 1);
     padding: 29px 20px;
-     }
-  
+  }
 
 .outside {
     display: flex;
