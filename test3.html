@@ -59,89 +59,6 @@
         .pageBody {
             width: 100%;
         }
-
-        .comments-container div b {
-            font-weight: bold !important;
-        }
-
-        .event_progress__content>.block_table__competitor div {
-            margin-bottom: 10px;
-        }
-
-        .event_progress__content {
-            width: 75% !important;
-        }
-
-        .olul>ol>li {
-            list-style: decimal;
-        }
-
-        .olul li>ul {
-            font-weight: bold;
-            width: 100%;
-            list-style: lower-alpha;
-            margin-left: 20px;
-        }
-
-        .olul li>ul>li {
-            width: max-content;
-            max-width: 95%;
-            padding: 5px;
-        }
-
-        .olul li>ul>li>span {
-            font-weight: normal;
-        }
-
-        .button-section {
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .button {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 2px solid #ccc;
-            padding: 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: left;
-            transition: 0.3s;
-            margin-bottom: 2%;
-        }
-
-        .button:hover {
-            border-color: #007bff;
-        }
-
-        .button .start-btn {
-            background: #007bff;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .button .start-btn.disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .btn.disabled {
-            pointer-events: none;
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .normal {
-            font-weight: normal;
-        }
     </style>
 
 
@@ -309,11 +226,7 @@
                         </div>
                     </div>
 
-                    
-
-                </div>
-            </div>
-            <div class="container button-section">
+                    <div class="container button-section">
                 <div class="button">
                     <span class="normal">Ranking By Element</span>
                     <span
@@ -327,6 +240,9 @@
                         <a class="btn"
                             data-bind="attr: { href: '/Judge?eventId=' + eventId() + '&competitorId=' + (selectedCompetitor() ? selectedCompetitor().id() : 0) }, if: (selectedCompetitor() && selectedCompetitor().isSaved())">Start</a>
                     </span>
+                </div>
+            </div>
+
                 </div>
             </div>
         </section>
