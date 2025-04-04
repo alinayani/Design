@@ -183,7 +183,8 @@
 .section2-optional-1-creatia{
     border: 1px solid rgba(217, 217, 217, 1);
     border-radius: 10px;
-    min-height: 500px;
+    height: 494px;
+    min-height: 390px;
     padding: 19px 30px;
 }
 .section2-optional-1-creatia .criteria-tabs span {
@@ -609,6 +610,9 @@
    .comments-summary .txt2 {
         height: 261px;
    } 
+   .section2-optional-1-creatia {
+    height: 602px;
+   }
 }
 @media (min-width:1024px) and (max-width:1199px) {
     .comments-summary .txt1 {
@@ -618,6 +622,9 @@
    .comments-summary .txt2 {
         height: 368px;
    } 
+   .section2-optional-1-creatia {
+    height: 810px;
+   }
 }
 
 
@@ -628,7 +635,7 @@
     .j-system.comments .container {
         min-width: 960px;
     }
-  
+   
    
     
 }
