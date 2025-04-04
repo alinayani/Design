@@ -449,6 +449,7 @@
       color: rgba(245, 245, 245, 1);
       border-radius: 8px;
       border: 1px;
+      font-weight: 400;
      font-size: 16px;
       padding: 17px 52px;
       font-family: 'Inter', sans-serif; /* Apply Inter font */
@@ -633,7 +634,7 @@
 
 
 .rank-btn .btn.disabled::before {
-    content: ""; 
+    content: "";
     display: inline-block; 
     background-image: url('./icons/Circle.png'); 
     background-size: contain; 
@@ -684,6 +685,15 @@
     max-width: 1600px;
     justify-content: space-between;
  }
+ .rank-btn .normal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    color: rgba(0, 0, 0, 1) !important;
+}
+
+
+
  
 
 
