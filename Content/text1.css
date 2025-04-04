@@ -60,6 +60,7 @@
    border: 1px solid black;
 }
 
+
 .container.button-section .button .start-btn {
    display: flex;
    text-transform: uppercase;
@@ -127,4 +128,10 @@
  }
  .container.button-section .button .start-btn a  {
    background: none;
+ }
+
+ .dotclass td {
+   text-align: right;
+   color: orange !important;
+   padding-left: 10px;
  }

@@ -613,6 +613,9 @@
    .section2-optional-1-creatia {
     height: 602px;
    }
+   .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+    top: 28% !important;
+}
 }
 @media (min-width:1024px) and (max-width:1199px) {
     .comments-summary .txt1 {
@@ -625,6 +628,12 @@
    .section2-optional-1-creatia {
     height: 810px;
    }
+   .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+    top: 18% !important;
+}
+.comp-criterias-table td.no-comment {
+    line-height: 1.5em;
+}
 }
 
 
@@ -699,6 +708,32 @@
     font-weight: 400 !important;
     color: rgba(0, 0, 0, 1) !important;
 }
+
+.comp-criterias-table td:nth-child(2) {
+    text-align: left !important;
+    padding-left: 30px !important; 
+    position: relative;
+}
+
+/* Show dots before text if comment exists */
+.comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+    content: "• "; 
+    position: absolute;
+    left: 20px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+/* Style when there is no comment */
+.comp-criterias-table td.no-comment {
+    padding-left: 0px; 
+}
+
+
+
+
+
+
 
 
 
