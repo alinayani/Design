@@ -729,6 +729,23 @@
     padding-left: 0px; 
 }
 
+/* .comments-summary .txt1::before {
+    content: "• "; 
+    position: absolute;
+    left: 20px; 
+    top: 50%; 
+    
+    color: black;
+} */
+.comments-summary .txt1 {
+    padding: 20px 20px;
+    line-height: 1.5em;
+}
+.comments-summary .txt2 {
+    padding: 20px 20px;
+    line-height: 1.5em;
+}
+
 
 
 
