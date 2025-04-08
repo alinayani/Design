@@ -393,7 +393,9 @@
 }
 
 .show-comment-section .align-content-md-end {
-    margin-left: auto;
+    margin: auto;
+    width: 100%;
+    text-align: right;
     margin-bottom: -174px;
 }
 .show-comment-section .align-content-md-end button:not(:first-child) {
