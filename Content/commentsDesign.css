@@ -1,0 +1,832 @@
+
+/* header styles  */
+
+span.name {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* header styles  */
+
+.header-section {
+    width: 100% !important;
+    background-color: #ffffff !important;
+}
+
+    .header-section .row {
+        padding: 13px 16px;
+    }
+
+    .header-section .row.header-row-2 {
+        padding: 15px 39px !important;
+    }
+
+.j-system.comments {
+    width: 100%;
+    margin: auto;
+    padding: 32px 30px;
+}
+
+    .j-system.comments .container {
+        width: 100%;
+        min-width: 1600px;
+        padding: 29px 20px;
+    }
+
+.allborder {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 29px 20px;
+}
+
+.outside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .outside h2 {
+        font-family: Montserrat, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+.right {
+    padding: 8px;
+    color: rgba(0, 153, 81, 1);
+    border: 1px solid rgba(0, 153, 81, 1);
+    border-radius: 8px;
+    background-color: rgba(227, 227, 227, 1);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+    .right.completed {
+        background-color: green; /* Set the background to green */
+        color: white; /* Optional: Change text color for better contrast */
+        border-color: green;
+    }
+
+    .right::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../Images/commentsdesign/Loader.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 8px;
+    }
+
+    .right.completed::before {
+        background-image: url('../Images/commentsdesign/Check circle.png'); /* New icon when completed */
+    }
+
+
+
+
+
+
+
+.compet_form {
+    display: flex;
+    margin: 26px 23px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(227, 227, 227, 1);
+}
+
+    .compet_form > span:first-child {
+        width: 197px;
+        font-family: Montserrat, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 19px 17px;
+    }
+
+    .compet_form > span:nth-child(2) {
+        width: calc(100% - 300px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 9px 8px;
+    }
+
+
+    .compet_form .selected span {
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+
+    .compet_form .spanss {
+        width: 160px;
+        padding: 8px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Selected state */
+    .compet_form .selected {
+        padding: 8px;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        background-color: rgba(0, 122, 255, 1);
+        box-sizing: border-box;
+    }
+
+
+
+        .compet_form .selected span {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.2;
+            padding: 0%;
+        }
+
+
+    .compet_form span:hover {
+        cursor: pointer;
+    }
+
+
+    /* Style for the 'add tag' text */
+    .compet_form .gray-text {
+        color: rgba(179, 179, 179, 1); /* Light gray color */
+        cursor: pointer; /* Pointer cursor to indicate interactivity */
+        position: relative; /* Allows positioning the tooltip above the element */
+    }
+
+
+
+
+
+
+/* Section Optional */
+
+.section2-optional {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+    .section2-optional .section2-optional-1 {
+        width: 55%;
+    }
+
+    .section2-optional .section2-optional-2 {
+        display: flex;
+        padding-top: 16px;
+        flex-direction: column;
+        width: 45%;
+    }
+
+    .section2-optional .section2-optional-1 p {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        color: rgba(142, 142, 147, 1);
+        padding: 16px 14px;
+    }
+
+.section2-optional-1-creatia {
+    border: 1px solid rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    height: 494px;
+    min-height: 390px;
+    padding: 19px 30px;
+}
+
+    .section2-optional-1-creatia .criteria-tabs span {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        justify-content: space-around;
+    }
+
+    .section2-optional-1-creatia .criteria-tabs button {
+        background: none;
+        color: rgba(0, 0, 0, 1);
+        border: none;
+        margin: 0px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        width: 144px;
+        font-weight: 400;
+    }
+
+
+        .section2-optional-1-creatia .criteria-tabs button.active {
+            color: rgba(0, 122, 255, 1) !important;
+        }
+
+    .section2-optional-1-creatia .comp-criterias h3 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 1);
+        font-family: 'Montserrat', sans-serif;
+        padding: 28px 35px;
+    }
+
+.comp-criterias {
+    text-align: center;
+}
+
+    .comp-criterias .btn {
+        background-color: rgba(227, 227, 227, 1);
+        padding: 8px 21px;
+        border: 1px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+
+
+
+.comp-criterias-table button {
+    background: none;
+    border: 2px solid transparent;
+    padding: 10px 15px;
+    font-size: 11px;
+    border-radius: 7px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.comp-criterias-table tr button.selected {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+}
+
+
+.comp-criterias-table button:hover {
+    background-color: rgba(240, 240, 240, 1);
+    cursor: pointer;
+}
+
+
+.comp-criterias-table td {
+    font-size: 10px;
+    background-color: rgba(120, 120, 128, 0.12);
+    border-radius: 9px;
+    padding: 2px;
+}
+
+    .comp-criterias-table td:nth-child(2) {
+        font-size: initial;
+        background-color: initial;
+        border-radius: initial;
+        text-align: center;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        padding: initial;
+    }
+
+
+.comp-criterias-table tr {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 26px;
+    padding: 0;
+}
+
+
+
+
+.section2-optional-2 {
+    padding: 23px 14px;
+}
+
+.comments-summary .txt1 {
+    margin-top: 8px;
+    margin-bottom: 40px;
+    height: 214px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.comments-summary .txt2 {
+    margin-top: 8px;
+    height: 208px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.comments-summary h4 {
+    font-size: 16px;
+    padding-bottom: 4px;
+}
+
+.comments-summary h2 {
+    margin-top: 8px;
+}
+
+.comments-summary strong {
+    font-weight: 800;
+}
+
+
+.section2-optional-2 .btn-subm {
+    border-radius: 8px;
+    border: 1px;
+    align-self: flex-end;
+    padding: 12px;
+    margin-top: 8px;
+    font-weight: 400;
+    margin-right: 0px;
+    font-size: 16px;
+    background-color: rgba(179, 179, 179, 1);
+}
+
+.btn-subm.enabled {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.j-system .container.no-after::after {
+    content: none;
+    background-image: none;
+}
+
+
+
+
+.comp-criterias-table button.selected[data-bind*="'didWell'"] {
+    background-color: white;
+    color: rgba(0, 153, 81, 1);
+}
+
+.comp-criterias-table button.selected[data-bind*="'improve'"] {
+    background-color: white;
+    color: Red;
+}
+/* Green color for "Did Well" */
+.didwell {
+    color: rgba(0, 153, 81, 1) !important; /* Green color */
+}
+
+/* Red color for "Improve" */
+.improve {
+    color: rgba(255, 0, 0, 1) !important; /* Red color */
+}
+
+
+/* show comment-section */
+
+
+.show-comment-section {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 180px;
+    padding: 245px 180px;
+}
+
+    .show-comment-section p {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .show-comment-section .align-content-md-center {
+        text-align: center;
+    }
+
+        .show-comment-section .align-content-md-center button {
+            margin-top: 40px;
+            background-color: rgba(227, 227, 227, 1);
+            border-radius: 8px;
+            border: 1px solid rgba(118, 118, 118, 1);
+            font-weight: 400;
+            font-size: 14px;
+            padding: 8px 20px;
+        }
+
+    .show-comment-section .align-content-md-end {
+        margin: auto;
+        width: 100%;
+        text-align: right;
+        margin-bottom: -174px;
+    }
+
+        .show-comment-section .align-content-md-end button:not(:first-child) {
+            background-color: rgb(3, 3, 3);
+            border-radius: 8px;
+            border: 1px solid rgba(118, 118, 118, 1);
+            font-weight: 400;
+            font-size: 16px;
+            color: white;
+            padding: 8px 12px;
+        }
+
+        .show-comment-section .align-content-md-end button:first-child {
+            background-color: rgba(217, 217, 217, 1);
+            border-radius: 8px;
+            border: 1px solid rgba(118, 118, 118, 1);
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(179, 179, 179, 1);
+            padding: 8px 12px;
+        }
+
+.selected-comment {
+    background-color: rgba(20, 174, 92, 0.22) !important;
+    border-radius: 8px;
+    color: black !important; /* Set text color to black */
+    border: 1px;
+    padding: 8px;
+}
+
+.spanss .gray-text {
+    display: inline !important; /* Ensure the 'gray-text' remains visible */
+    color: black;
+}
+
+
+/* finalized-comment */
+
+.finalized-comment {
+    padding: 168px 222px;
+}
+
+    .finalized-comment .align-content-md-center {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+        .finalized-comment .align-content-md-center p {
+            text-align: center;
+            font-family: 'Inter', sans-serif; /* Apply Inter font */
+            font-weight: 400; /* Set font weight to 400 */
+            font-size: 16px; /* Set font size to 16px */
+            line-height: 1.9rem;
+        }
+
+        .finalized-comment .align-content-md-center button {
+            background-color: black;
+            color: rgba(245, 245, 245, 1);
+            border-radius: 8px;
+            border: 1px;
+            font-weight: 400;
+            font-size: 16px;
+            padding: 17px 52px;
+            font-family: 'Inter', sans-serif; /* Apply Inter font */
+        }
+
+
+/* comment-done */
+
+.comment-done {
+    padding: 230px 385px;
+}
+
+
+    .comment-done .align-content-md-center {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        flex-direction: column;
+    }
+
+        .comment-done .align-content-md-center button {
+            background-color: rgba(217, 217, 217, 1);
+            color: rgba(179, 179, 179, 1);
+            border-radius: 8px;
+            border: 1px;
+            font-weight: 400;
+            font-size: 16px;
+            padding: 12px;
+            font-family: 'Inter', sans-serif; /* Apply Inter font */
+        }
+
+    .comment-done .align-content-md-center {
+        text-align: center;
+        font-family: 'Inter', sans-serif; /* Apply Inter font */
+        font-weight: 400; /* Set font weight to 400 */
+        font-size: 16px; /* Set font size to 16px */
+    }
+
+/* Modal Input Field */
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 480px;
+    max-width: 100%;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.modal-body {
+    margin-bottom: 25px;
+}
+
+    .modal-body input {
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .modal-body input::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+
+        .modal-body input:focus {
+            border-color: #007aff;
+            box-shadow: 0 0 8px rgba(0, 122, 255, 0.3);
+        }
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+    .modal-footer button {
+        padding: 12px 25px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        background-color: #007aff;
+        color: white;
+        border: 2px solid #007aff;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+        outline: none;
+    }
+
+        .modal-footer button:hover {
+            background-color: #005bb5;
+            transform: translateY(-2px);
+        }
+
+        .modal-footer button:active {
+            transform: translateY(1px);
+        }
+
+        .modal-footer button:disabled {
+            background-color: #d3d3d3;
+            color: #aaa;
+            border-color: #d3d3d3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+.ui-widget-header {
+    background: none !important;
+    border: none !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-content .modal-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+    .modal-content .modal-header h4 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+    }
+
+.modal-body {
+    padding-bottom: 15px;
+}
+
+/* For screens smaller than 1200px (large screens, laptops) */
+/* Desktop (large screens) */
+@media (min-width:1440px) and (max-width:1620px) {
+    .comments-summary {
+        width: 100%;
+    }
+
+    .j-system.comments .container {
+        min-width: 1371px;
+    }
+
+    .compet_form > span:nth-child(2) {
+        width: calc(100% - 250px);
+    }
+}
+
+@media (min-width:1200px) and (max-width:1439px) {
+    .comments-summary .txt1 {
+        height: 269px;
+    }
+
+    .comments-summary .txt2 {
+        height: 261px;
+    }
+
+    .section2-optional-1-creatia {
+        height: 602px;
+    }
+
+    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+        top: 28% !important;
+    }
+
+    .compet_form > span:nth-child(2) {
+        width: calc(100% - 200px);
+    }
+}
+
+@media (min-width:1024px) and (max-width:1199px) {
+    .comments-summary .txt1 {
+        height: 373px;
+        margin-top: 18px;
+    }
+
+    .comments-summary .txt2 {
+        height: 368px;
+    }
+
+    .section2-optional-1-creatia {
+        height: 810px;
+    }
+
+    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+        top: 18% !important;
+    }
+
+    .comp-criterias-table td.no-comment {
+        line-height: 1.5em;
+    }
+
+    .compet_form > span:nth-child(2) {
+        width: calc(100% - 160px);
+    }
+}
+
+
+@media (min-width:1024px) and (max-width:1439px) {
+    .comments-summary {
+        width: 100%;
+    }
+
+    .j-system.comments .container {
+        min-width: 960px;
+    }
+}
+
+
+.rank-btn .btn.disabled::before {
+    content: "";
+    display: inline-block;
+    background-image: url('../Images/commentsdesign/Circle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.deesable:not(.disabled) {
+    background-color: rgba(0, 122, 255, 1) !important; /* Blue background when active */
+    color: white !important;
+    border-radius: 8px;
+    border: 1px;
+}
+
+    .deesable:not(.disabled) a {
+        color: white !important;
+        font-size: 16px;
+        font-family: Inter, sans-serif;
+        font-weight: 400;
+        background: none;
+        text-decoration: none;
+    }
+
+    .deesable:not(.disabled) .btn::before {
+        color: white;
+    }
+/* When a button inside .criteria-tabs is active */
+.criteria-tabs button.active {
+    font-weight: 700; /* Apply font weight 700 to the active button */
+}
+
+
+
+.data_system__description {
+    padding: 0px 0px;
+}
+
+.rank-btn {
+    margin-top: 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 23px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 37px;
+    padding-left: 42px;
+    max-width: 1600px;
+    justify-content: space-between;
+}
+
+    .rank-btn .normal {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        color: rgba(0, 0, 0, 1) !important;
+    }
+
+.comp-criterias-table td:nth-child(2) {
+    text-align: left !important;
+    padding-left: 30px !important;
+    position: relative;
+}
+
+    /* Show dots before text if comment exists */
+    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+        content: "• ";
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+/* Style when there is no comment */
+.comp-criterias-table td.no-comment {
+    padding-left: 0px;
+}
+
+.comments-summary .txt1::before {
+    content: "•";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    color: black;
+}
+
+.comments-summary .txt1 {
+    padding: 20px 20px;
+    color: rgba(0, 0, 0, 1);
+    line-height: 1.5em;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.comments-summary .txt2 {
+    padding: 20px 20px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: rgba(0, 0, 0, 1);
+}
+
+@media (min-width:1440px) and (max-width:1620px) {
+    .section2-optional-1-creatia .criteria-tabs button {
+        width: 139px;
+    }
+}
+
+@media (min-width:1224px) and (max-width:1439px) {
+    .section2-optional-1-creatia .criteria-tabs button {
+        width: 80px;
+    }
+
+    .section2-optional-1-creatia .criteria-tabs span {
+        justify-content: space-evenly;
+    }
+}

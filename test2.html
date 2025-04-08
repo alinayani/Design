@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta property="og:image" content="path/to/image.jpg">
+        <title>Judge Index - Pole Sport Organization, LLC</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        <link href="Content/fonts.css" rel="stylesheet"/>
+<link href="Content/site.css" rel="stylesheet"/>
+<link href="Content/test.css" rel="stylesheet"/>
+<link href="Content/judgescore.css" rel="stylesheet"/>
+<link href="Content/modaldialog.css" rel="stylesheet"/>
+
+        <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+        
+    <link href="Content/themes/base/jquery.ui.core.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.resizable.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.selectable.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.accordion.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.autocomplete.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.button.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.dialog.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.slider.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.tabs.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.datepicker.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.progressbar.css" rel="stylesheet"/>
+<link href="Content/themes/base/jquery.ui.theme.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="Content/Judging.css">
+    <link rel="stylesheet" type="text/css" href="Content/toastr.css">
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>     -->
+    <script type="text/javascript" src="Content/Scripts/swfobject.js"></script>
+
+
+    <style>
+
+        .debug {
+            position: fixed;
+            left: 0;
+            top: 0;
+            border: 1px solid red;
+            background-color: whitesmoke;
+        }
+
+        .leftPane {
+            width: 50%;
+            float: left;
+        }
+
+        .rightPane {
+            width: 50%;
+            max-width: 450px;
+            float: left;
+        }
+
+        .pageBody {
+            width: 100%;
+        }
+
+        /*.comments-container div b {
+            font-weight: bold !important;
+        }
+
+        .event_progress__content > .block_table__competitor div {
+            margin-bottom: 10px;
+        }
+
+        .event_progress__content {
+            width: 75% !important;
+        }
+
+        .olul > ol > li {
+            list-style: decimal;
+        }
+
+        .olul li > ul {
+            font-weight: bold;
+            width: 100%;
+            list-style: lower-alpha;
+            margin-left: 20px;
+        }
+
+        .olul li > ul > li {
+            width: max-content;
+            max-width: 95%;
+            padding: 5px;
+        }
+
+        .olul li > ul > li > span {
+            font-weight: normal;
+        }
+
+        .button-section {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            transition: 0.3s;
+            margin-bottom: 2%;
+        }
+
+        .button:hover {
+            border-color: #007bff;
+        }
+
+        .button .start-btn {
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button .start-btn.disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .normal {
+            font-weight: normal;
+        }*/
+    </style>
+
+
+        <!--Main-Style, Fonts-->
+        <link href="Content/v1/css/main.css" rel="stylesheet"/>
+<link href="Content/v1/css/fonts.css" rel="stylesheet"/>
+
+    </head>
+    
+    <body>
+        <!--Wrapper-->
+        <div id="top" class="wrapper">
+            
+            <!--start Header-->
+            <header style="z-index: 7" class="header-section">
+                <div class="container-fluid header">
+                    <div class="row header-row" style="margin:auto;">
+                        <div class="col-md-4 col-lg-4"><a href="#" class="logo"><img src="Content/v1/img/logo2.png" alt="Pole Sports Org"></a></div>
+                        <div class="col-md-8 col-lg-8"></div>
+                    </div>
+                    <div class="row header-row-2" style="margin:auto; background: black; padding: 15px; color: white;">
+                        <div class="col-sm-6">
+                            <div class="data_system__description">
+                                <span class="title">EVENT :</span>
+                                <span class="name">
+                                    401 Entertainment Level 4 Junior/Senior
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="data_system__description" style="text-align: right;">
+                                <span class="title">JUDGE :</span>
+                                <span class="name">
+newtest123                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--end Header-->
+
+            
+    
+
+
+            <div class="bodyMessage"></div>
+
+            
+
+
+
+        <link rel="stylesheet" type="text/css" href="Content/commentsDesign.css">
+        <section class="j-system comments">
+            <div class="container no-after">
+                <div class="row">
+                    
+<!--<link rel="stylesheet" type="text/css" href="/Content/commentsDesign.css">-->
+<div id="tagpopup" data-bind="css: { visible: showTagPopup }">
+    <div class="modal-content">
+        <div class="modal-body">
+            <input type="text" class="form-control" placeholder="Enter tag" data-bind="value: newTag">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bind="click: saveTag">Save</button>
+        </div>
+    </div>
+</div>
+
+<!--<div class="col-md-12" data-bind="visible: $root.isStart">
+    <div class="event_progress__content">
+        <div class="block_table__competitor ">
+            <div>Welcome to the PSO Judging system. Each Event will consist of two parts: <b>Comments</b> and <b>Ranking by Element.</b></div>
+            <div style="margin-top: 20px;">INSTRUCTIONS</div>
+            <div class="olul">
+                <ol>
+                    <li>
+                        Complete the Comments section while each competitor performs by adding <b>2 things they did well</b> and <b>2 things they could improve</b>. Be sure to give actionable and specific feedback where possible.
+                        <ul><li><b>Optional:</b> <span>Use the Comment Helper Tool to quickly add definitions of specific elements to your comment text box. You can add more specific and customized feedback in addition to this.</span></li></ul>
+                    </li>
+                    <li>Complete the Ranking by Element section by dragging and dropping each competitor in order of best demonstrated from top to bottom. You must save comments for the first competitor before you can start this section. After that, you can alternate between sections as you please.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="button-section">
+        <div class="button">
+            <span class="normal">Comments</span>
+            <span class="start-btn">
+                <a class="btn" data-bind="click: startComments">Start</a>
+            </span>
+        </div>
+    </div>
+</div>-->
+
+<div class="allborder col-md-12"> <!--data-bind="visible: !$root.isStart()"-->
+    <div class="outside">
+        <h2 class="left">Comments</h2>
+        <span class="right" data-bind="text: completedText, css: completedClass">
+        </span>
+    </div>
+    <div class="compet_form">
+        <span>Enter Comments For:</span>
+        <span data-bind="foreach: $root.competitors">
+            <span class="spanss" data-bind="css: { 'selected': $data === $root.selectedCompetitor(), 'saved': isSaved }">
+                <span data-bind="text: stageName, click: $root.selectCompetitor"></span>
+                |
+                <span data-bind="text: competitorNick() ? competitorNick() : 'add tag', click: function() { $root.openTagPopup($data) }, enable: $root.selectedCompetitor() === $data, css: { 'gray-text': !competitorNick() }"></span>
+            </span>
+        </span>
+    </div>
+    <div class="col-md-12 section2-optional" data-bind="visible: $root.showComments">
+        <div class="col-md-6 section2-optional-1">
+            <p><strong>OPTIONAL:</strong> Use this section to help add comments. This does not impact rankings.</p>
+            <div class="section2-optional-1-creatia">
+                <div class="criteria-tabs">
+                    <span data-bind="foreach: selectedCompetitor().criteria">
+                        <button data-bind="text: name, click: $parent.selectCriteria, css: { 'active': $parent.selectedCompetitor().selectedCriteria() === $data }"></button>
+                    </span>
+                </div>
+                <hr />
+                <div class="comp-criterias" data-bind="with: selectedCompetitor().selectedCriteria">
+                    <h3 data-bind="text: name"></h3>
+                    <table class="comp-criterias-table">
+                        <tbody data-bind="foreach: rows">
+                            <tr>
+                                <td class="col-md-3">
+                                    <button data-bind="click: function() { $root.showComment($data, 'improve') }, css: { 'selected': selectedOption() === 'improve' }">Improve</button>
+                                    <button data-bind="click: function() { $root.hideComment($data) }, css: { 'selected': selectedOption() === '' }">No Comment</button>
+                                    <button data-bind="click: function() { $root.showComment($data, 'didWell') }, css: { 'selected': selectedOption() === 'didWell' }">Did Well</button>
+                                </td>
+                                <td class="col-md-3" data-bind="text: displayedComment, css: commentClass"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn" data-bind="click: $parent.addToComments">Add to Comments</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 section2-optional-2">
+            <div class="comments-summary">
+                <h4>2 Things you <strong>did well</strong></h4>
+                <textarea class="txt1" data-bind="value: $root.selectedCompetitor().didWellComments"></textarea>
+
+                <h4>2 Things to <strong>improve</strong> if you did this routine again</h4>
+                <textarea class="txt2" data-bind="value: $root.selectedCompetitor().improveComments"></textarea>
+            </div>
+            <button class="btn-subm" data-bind="click: submitComments, enable: $root.selectedCompetitor().canSubmit, css: { 'enabled': $root.selectedCompetitor().canSubmit }">Submit Comments for <span data-bind="text: selectedCompetitor().stageName"></span></button>
+        </div>
+    </div>
+    <div class="col-md-12 show-comment-section" data-bind="visible: $root.showSubmit">
+        <div class="align-content-md-center">
+            <p>Thank you! Comments for <span data-bind="text: selectedCompetitor().stageName"></span> have been submitted.</p>
+            <button data-bind="click: editComments">Edit Comments</button>
+        </div>
+        <div class="align-content-md-end">
+            <button class="disable" disabled="disabled">Submitted</button>
+            <button class="next" data-bind="click: nextCompetitor">Next</button>
+        </div>
+    </div>
+    <div class="col-md-12 finalized-comment" data-bind="visible: $root.isCompleted">
+        <div class="align-content-md-center">
+            <div>
+                <p>
+                    If you need to edit any comments, please do so now.<br />
+                    Please Finalize the comments section by clicking "Finalize" below. <br />
+                    You will not be able to go back to edit comments once you hit "Finalize".
+                </p>
+            </div>
+            <button data-bind="click: finalizeComments">Finalize all competitors comments</button>
+        </div>
+    </div>
+    <div class="col-md-12 comment-done" data-bind="visible: $root.isDone">
+        <div class="align-content-md-center">
+            <div>
+                <p>Thank You! All comments for each competitor have been submitted and finalized.</p>
+            </div>
+            <button disabled class="btn disabled">All comments submitted</button>
+        </div>
+    </div>
+</div>
+
+<div class="button rank-btn">
+    <span class="normal">Ranking By Element</span>
+    <span class="deesable" style="background-color:rgba(217, 217, 217, 1) ; padding: 12px 16px; border-radius: 8px;
+                border: 1px; color: white; text-transform: uppercase; font-size: 16px; font-weight: 400;" data-bind="css: { 'disabled': (selectedCompetitor() && !selectedCompetitor().isCommentsSubmitted()) }">
+        <span class="btn disabled" data-bind="if: (selectedCompetitor() && !selectedCompetitor().isCommentsSubmitted())">Start</span>
+        <a class="btn" data-bind="attr: { href: '/Judge?eventId=' + eventId() + '&competitorId=' + (selectedCompetitor() ? selectedCompetitor().id() : 0) }, if: (selectedCompetitor() && selectedCompetitor().isCommentsSubmitted())">Start</a>
+    </span>
+</div>
+                </div>
+            </div>
+        </section>
+
+
+
+            <!--start footer-->
+            <footer>
+                <p class="sub">© 2025 POLE SPORT ORGANIZATION, LLC.  ALL RIGHTS RESERVED. </p>
+                
+                <!-- TODO :: Ask about it
+                <div class="content-wrapper">
+
+                    <div class="float-left">
+                        <div style="color: #e2e2e2;">
+                            User: judge1
+                            Status: AllScoresMeanCompliant
+                            EventId: 26403
+                            CompetitorId: 
+                        </div>
+                        <div>
+                            <div class="refresh-indicator" style="margin-bottom: 15px;"></div>
+                            
+                        </div>
+                        <br/><br/><br/><br/><br/><br/><br/>
+                    </div>
+                </div>
+                -->
+                
+            </footer>
+            <!--end footer-->
+        </div>
+    <!--Wrapper end-->
+
+        <script src="Content/Scripts/jquery-2.0.3.js"></script>
+
+        <script src="Content/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="Content/Scripts/jquery.validate.js"></script>
+<script src="Content/Scripts/jquery.validate.unobtrusive.js"></script>
+
+        <script src="Content/Scripts/custom/modaldialog.js"></script>
+
+        
+
+    <script src="Content/Scripts/jquery-ui-1.10.4.js"></script>
+<script src="Content/Scripts/jquery.caret.js"></script>
+
+    <script type="text/javascript" src="Content/Scripts/toastr.js"></script>
+    <script src="Content/Scripts/knockout-3.0.0.debug.js"></script>
+<script src="Content/Scripts/knockout.mapping-latest.debug.js"></script>
+<script src="Content/Scripts/knockout-sortable-0.8.5.js"></script>
+
+    <script type="text/javascript" src="Content/Scripts/linq.js"></script>
+    <script src="Content/Client/Judge/CompetitorSummary.js"></script>
+<script src="Content/Client/Judge/default.js"></script>
+<script src="Content/Client/Judge/ViewModel.js"></script>
+
+
+    <script>
+
+        var refreshTimer = Number('0');
+        var pageJudgingStatus = 'AllScoresMeanCompliant';
+        var isEditingScore = 'False';
+        var meanScore = Number(0);
+        var MVC_VerifyScoreAgainstMean = 'False';
+
+        var MVC_ConfirmScore = 'False' == 'True';
+        var MVC_DefaultSortby = 'order';
+
+        var pageIsDirty = '';
+
+        var Model;
+
+        var MVC_EventId = '26403';
+        var MVC_EditingCompetitorId = '0';
+        var MVC_EditingCompetitorId1 = '0';
+        var MVC_judgeUserId = '2';
+        var MVC_InitialData = [{"id":33590,"eventId":26403,"judgeUserId":0,"orderNumber":1,"stageName":"Miranda Lynne","totaldeductions":0.00,"positivescore":100.00,"totalscore":100.00,"canEdit":true,"isCurrent":false,"isScoreSubmitted":true,"competitorNick":"test","isWarning":false,"isDisqualified":false,"thingYouDidWell1":"Stage Etiquette: Smooth execution","thingYouDidWell2":"Stage Etiquette: Accurate timing","thingYouDidWell3":"[{\"name\":\"Clarity of Concept\",\"rows\":[{\"improve\":\"Unclear message\",\"didWell\":\"Clear concept\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Ambiguous presentation\",\"didWell\":\"Engaging message\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Confusing visuals\",\"didWell\":\"Creative presentation\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"}]},{\"name\":\"Quality of Execution\",\"rows\":[{\"improve\":\"Sloppy movements\",\"didWell\":\"Smooth execution\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Inconsistent timing\",\"didWell\":\"Accurate timing\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Lack of confidence\",\"didWell\":\"Confident presentation\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"}]},{\"name\":\"Musicality\",\"rows\":[{\"improve\":\"Off-beat performance\",\"didWell\":\"Perfect rhythm\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Missed cues\",\"didWell\":\"Accurate cues\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Poor synchronization\",\"didWell\":\"Great synchronization\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"}]},{\"name\":\"Flow \u0026 Fluidity\",\"rows\":[{\"improve\":\"Unclear message\",\"didWell\":\"Clear concept\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Ambiguous presentation\",\"didWell\":\"Engaging message\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Confusing visuals\",\"didWell\":\"Creative presentation\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"}]},{\"name\":\"Uniqueness\",\"rows\":[{\"improve\":\"Sloppy movements\",\"didWell\":\"Smooth execution\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Inconsistent timing\",\"didWell\":\"Accurate timing\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Lack of confidence\",\"didWell\":\"Confident presentation\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"}]},{\"name\":\"Category\",\"rows\":[{\"improve\":\"Off-beat performance\",\"didWell\":\"Perfect rhythm\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Missed cues\",\"didWell\":\"Accurate cues\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Poor synchronization\",\"didWell\":\"Great synchronization\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"}]},{\"name\":\"Level\",\"rows\":[{\"improve\":\"Unclear message\",\"didWell\":\"Clear concept\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Ambiguous presentation\",\"didWell\":\"Engaging message\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Confusing visuals\",\"didWell\":\"Creative presentation\",\"displayedComment\":\"Level: Confusing visuals\",\"selectedOption\":\"improve\",\"commentClass\":\"improve\"}]},{\"name\":\"Stage Etiquette\",\"rows\":[{\"improve\":\"Sloppy movements\",\"didWell\":\"Smooth execution\",\"displayedComment\":\"Stage Etiquette: Smooth execution\",\"selectedOption\":\"didWell\",\"commentClass\":\"didwell\"},{\"improve\":\"Inconsistent timing\",\"didWell\":\"Accurate timing\",\"displayedComment\":\"Stage Etiquette: Accurate timing\",\"selectedOption\":\"didWell\",\"commentClass\":\"didwell\"},{\"improve\":\"Lack of confidence\",\"didWell\":\"Confident presentation\",\"displayedComment\":\"Stage Etiquette: Lack of confidence\",\"selectedOption\":\"improve\",\"commentClass\":\"improve\"}]}]","thingToImprove1":"Stage Etiquette: Lack of confidence","thingToImprove2":"Level: Confusing visuals","thingToImprove3":"{\"name\":\"Level\",\"rows\":[{\"improve\":\"Unclear message\",\"didWell\":\"Clear concept\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Ambiguous presentation\",\"didWell\":\"Engaging message\",\"displayedComment\":\"\",\"selectedOption\":\"\",\"commentClass\":\"no-comment\"},{\"improve\":\"Confusing visuals\",\"didWell\":\"Creative presentation\",\"displayedComment\":\"Level: Confusing visuals\",\"selectedOption\":\"improve\",\"commentClass\":\"improve\"}]}","isCommentsSubmitted":true},{"id":33591,"eventId":26403,"judgeUserId":0,"orderNumber":2,"stageName":"Doodlebob","totaldeductions":null,"positivescore":null,"totalscore":null,"canEdit":true,"isCurrent":false,"isScoreSubmitted":false,"competitorNick":null,"isWarning":false,"isDisqualified":false,"thingYouDidWell1":null,"thingYouDidWell2":null,"thingYouDidWell3":null,"thingToImprove1":null,"thingToImprove2":null,"thingToImprove3":null,"isCommentsSubmitted":false}];
+        var MVC_BindTotalScore = false;
+        var keyValueArray = [];
+        var MVC_CriteriaTemplates;
+        var shouldPassCriteria = true;
+        var showCase = false;
+        console.log(shouldPassCriteria, MVC_InitialData);
+        //console.log("ali", MVC_EventId, MVC_EditingCompetitorId, MVC_InitialData, Model);
+        if(shouldPassCriteria){
+            //$(document).ready(function () {
+            //    // Add the class 'no-after' on page load
+            //    $('.j-system .container').toggleClass('no-after');
+            //});
+
+            //// Submit Comments function
+            function submitComments() {
+                // Submit the comments logic (you can replace this with your actual logic)
+                console.log("Comments submitted");
+
+                // Disable the "Next" button until the next competitor is selected
+                document.querySelector('.next').disabled = false;
+
+                // Mark the selected competitor as commented by adding the 'saved' class
+                let selectedCompetitorElement = document.querySelector('.compet_form .spanss.selected');
+                if (selectedCompetitorElement) {
+                    selectedCompetitorElement.classList.add('saved'); // Add a 'saved' class instead of 'selected-comment'
+                }
+
+                // Do not change the color of "add tag" here
+            }
+
+            // Function to move to the next competitor and apply the green background
+            function nextCompetitor() {
+                // Remove the 'saved' class from the previous competitor to reset the background
+                let previousCompetitorElement = document.querySelector('.compet_form .spanss.selected');
+                if (previousCompetitorElement) {
+                    previousCompetitorElement.classList.remove('saved'); // Remove green background (if applied)
+                    let addTagElement = previousCompetitorElement.querySelector('.gray-text');
+                    if (addTagElement) {
+                        addTagElement.classList.remove('tag-black'); // Remove black color
+                    }
+                }
+
+                // Proceed to the next competitor (move to the next 'spanss' element)
+                let nextCompetitor = getNextCompetitor();
+
+                // If there is no next competitor (i.e., last competitor), apply styles to the last competitor
+                if (!nextCompetitor) {
+                    let lastCompetitor = document.querySelector('.compet_form .spanss:nth-last-child(1)');
+                    if (lastCompetitor) {
+                        lastCompetitor.classList.remove('selected'); // Select the last competitor
+                        lastCompetitor.classList.add('selected-comment'); // Apply green background
+                        lastCompetitor.classList.add('saved'); // Apply green background
+                        let addTagElement = lastCompetitor.querySelector('.gray-text');
+                        if (addTagElement) {
+                            addTagElement.classList.add('tag-black'); // Change the tag text color to black
+                        }
+                    }
+                } else {
+                    // If there is a next competitor, apply the usual logic
+                    nextCompetitor.classList.add('selected'); // Select the next competitor
+                    let selectedCompetitorElement = document.querySelector('.compet_form .spanss.selected');
+                    if (selectedCompetitorElement) {
+                        selectedCompetitorElement.classList.add('selected-comment'); // Apply green background to new competitor
+                        let addTagElement = selectedCompetitorElement.querySelector('.gray-text');
+                        if (addTagElement) {
+                            addTagElement.classList.add('tag-black');  // Change the tag text color to black
+                        }
+                    }
+                }
+
+                // Disable the "Next" button until the next comment is submitted
+                document.querySelector('.next').disabled = true;
+            }
+
+            // Get the next competitor (this function assumes you want to cycle through competitors)
+            function getNextCompetitor() {
+                let competitors = document.querySelectorAll('.compet_form .spanss');
+                let selectedIndex = Array.from(competitors).findIndex(function (element) {
+                    return element.classList.contains('selected');
+                });
+
+                // If there is a next competitor, return it
+                if (selectedIndex >= 0 && selectedIndex < competitors.length - 1) {
+                    return competitors[selectedIndex + 1];
+                }
+
+                // If the last competitor is selected, return null (i.e., no next competitor)
+                return null;
+            }
+
+            // Attach the functions to the appropriate buttons
+            //document.querySelector('.btn-subm').addEventListener('click', submitComments);
+            //document.querySelector('.next').addEventListener('click', nextCompetitor);
+        }
+        MVC_CriteriaTemplates = [
+            new Criteria('Clarity of Concept',
+                ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
+                ['Clear concept', 'Engaging message', 'Creative presentation']
+            ),
+            new Criteria('Quality of Execution',
+                ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
+                ['Smooth execution', 'Accurate timing', 'Confident presentation']
+            ),
+            new Criteria('Musicality',
+                ['Off-beat performance', 'Missed cues', 'Poor synchronization'],
+                ['Perfect rhythm', 'Accurate cues', 'Great synchronization']
+            ),
+            new Criteria('Flow & Fluidity',
+                ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
+                ['Clear concept', 'Engaging message', 'Creative presentation']
+            ),
+            new Criteria('Uniqueness',
+                ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
+                ['Smooth execution', 'Accurate timing', 'Confident presentation']
+            ),
+            new Criteria('Category',
+                ['Off-beat performance', 'Missed cues', 'Poor synchronization'],
+                ['Perfect rhythm', 'Accurate cues', 'Great synchronization']
+            ),
+            new Criteria('Level',
+                ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
+                ['Clear concept', 'Engaging message', 'Creative presentation']
+            ),
+            new Criteria('Stage Etiquette',
+                ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
+                ['Smooth execution', 'Accurate timing', 'Confident presentation']
+            )
+        ];
+        
+        var ytplayer;
+
+        function adminPasswordKeyUp()
+        {
+            //console.log($('#adminPassword').val());
+
+            if ($('#adminPassword').val() == 'adminpassword')
+            {
+                $('#adminButtons').show();
+            }
+            else{
+                $('#adminButtons').hide();
+
+            }
+        }
+
+        $.validator.methods.number = function (value, element) {
+
+            //> Don't complain about fractions with no decimal digits!
+            if (value.endsWith('.'))
+            {
+                value = value.substring(0, value.length-1);
+            }
+
+            return this.optional(element) || !isNaN(value);
+        }
+
+        String.prototype.endsWith = function(suffix) {
+            return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+
+        function stopTab(e)
+        {
+            var evt = e || window.event;
+            if (evt.keyCode == 9)
+            {
+                return false;
+            }
+
+            $('.eventUnlockButton').attr('disabled', 'disabled');
+            $('.eventLockButton').attr('disabled', 'disabled');
+        }
+
+        function onYouTubePlayerReady(playerId) {
+            ytplayer = document.getElementById("myytplayer");
+
+            ytplayer.addEventListener("onStateChange", "onPlayerStateChange");
+        }
+
+        function playYouTubeInPopup (youTubeVideoId)
+        {
+            var height = window.innerHeight - 100;
+
+            //var width = window.innerWidth - 100;
+            //showModalDialogWithContent('Competitor Video','<iframe id="player" type="text/html" width=100% height='+height+'px src="http://www.youtube.com/embed/'+youTubeVideoId+'?enablejsapi=1&autoplay=1&controls=0&modestbranding=1&showinfo=0" frameborder="1"></iframe>');
+            showModalDialogWithContent('Competitor Video', '<div id="ytapiplayer" style="height:'+height+'px; width:100%;">You need Flash player 8+ and JavaScript enabled to view this video.</div>');
+
+            $('div#openModal').addClass('full');
+            $('.modalDialog > div').css('height', window.innerHeight+'px');
+            $('#modalDialogContent').css('height', height+'px');
+
+            var params = { allowScriptAccess: "always", allowFullScreen: "true" };
+            var atts = { id: "myytplayer" };
+
+            var url = "https://www.youtube.com/v/" + youTubeVideoId + "?cc_load_policy=1&controls=0&enablejsapi=1&fs=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&version=3&autoplay=1";
+
+            swfobject.embedSWF(url, "ytapiplayer", "100%", "100%", "8", null, null, params, atts);
+            //> OnYouTubePlayerReady will be fired next
+        }
+
+        function onPlayerStateChange(newState) {
+
+            if (newState == 0) // video has ended
+            {
+                closeModalDialog();
+            }
+            else if (newState == 2) // PAUSED
+            {
+                //alert('you may not pause the video');
+                ytplayer.playVideo();
+            }
+    }
+
+    </script>
+
+
+    </body>
+</html>
