@@ -116,13 +116,12 @@
    font-weight: 400;
    font-family: 'Montserrat', sans-serif;
 }
-
-
-@media (min-width:1440px) and (max-width:1620px){
-   .section2-optional-1-creatia .criteria-tabs button{
-        width: 139px;
-   }
+.data_system__description  {
+   padding: 0px 0px;
 }
+
+
+
 
 @media (min-width:768px) and (max-width:1024px) { 
    .j-system .container.comments-container {
