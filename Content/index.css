@@ -767,6 +767,21 @@
     color: rgba(0, 0, 0, 1);
 }
 
+@media (min-width:1440px) and (max-width:1620px){
+    .section2-optional-1-creatia .criteria-tabs button{
+         width: 139px;
+    }
+ }
+ @media (min-width:1224px) and (max-width:1439px){
+    .section2-optional-1-creatia .criteria-tabs button{
+         width: 80px;
+    }
+    .section2-optional-1-creatia .criteria-tabs span {
+        justify-content: space-evenly;
+    }
+ }
+
+
 
 
 
