@@ -19,6 +19,7 @@
 
 .j-system .container.comments-container .block_table__competitor .olul li {
    margin-bottom: 20px;
+   width: 1022px;
 }
 .container.button-section {
    display: flex;
@@ -130,3 +131,6 @@
    background: none;
  }
 
+ .olul ol ul {
+      margin-left: 15px;
+ }

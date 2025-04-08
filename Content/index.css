@@ -95,6 +95,7 @@
   .compet_form > span:nth-child(2) {
     width: calc(100% - 300px);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
@@ -190,15 +191,17 @@
 .section2-optional-1-creatia .criteria-tabs span {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-evenly;
+    row-gap: 20px;
+    justify-content: space-around;
 }
 .section2-optional-1-creatia .criteria-tabs button {
     background: none;
     color: rgba(0, 0, 0, 1);
     border: none;
+    margin: 0px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    width: 144px;
     font-weight: 400;
 }
 
