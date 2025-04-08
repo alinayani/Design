@@ -93,10 +93,10 @@
   }
   
   .compet_form > span:nth-child(2) {
-    width: calc(100% - 200px);
+    width: calc(100% - 300px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
     padding: 9px 8px;
   }
@@ -191,7 +191,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 }
 .section2-optional-1-creatia .criteria-tabs button {
     background: none;
@@ -322,6 +322,7 @@
    padding: 12px;
    margin-top: 8px;
    font-weight: 400;
+   margin-right: 0px;
    font-size: 16px;
    background-color: rgba(179, 179, 179, 1);
 }
@@ -599,6 +600,9 @@
     .j-system.comments .container {
         min-width: 1371px;
     }
+    .compet_form > span:nth-child(2) {
+        width: calc(100% - 250px);
+    }
  
 }
 
@@ -615,6 +619,9 @@
    }
    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
     top: 28% !important;
+}
+.compet_form > span:nth-child(2) {
+    width: calc(100% - 200px);
 }
 }
 @media (min-width:1024px) and (max-width:1199px) {
@@ -633,6 +640,9 @@
 }
 .comp-criterias-table td.no-comment {
     line-height: 1.5em;
+}
+.compet_form > span:nth-child(2) {
+    width: calc(100% - 160px);
 }
 }
 
@@ -729,22 +739,32 @@
     padding-left: 0px; 
 }
 
-/* .comments-summary .txt1::before {
-    content: "• "; 
+.comments-summary .txt1::before {
+    content: "•"; 
     position: absolute;
     left: 20px; 
     top: 50%; 
     
     color: black;
-} */
+}
 .comments-summary .txt1 {
     padding: 20px 20px;
+    color: rgba(0, 0, 0, 1);
     line-height: 1.5em;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
 }
 .comments-summary .txt2 {
     padding: 20px 20px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
     line-height: 1.5em;
+    color: rgba(0, 0, 0, 1);
 }
+
+
 
 
 
