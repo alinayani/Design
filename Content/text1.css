@@ -120,6 +120,23 @@
    padding: 0px 0px;
 }
 
+/* Client changes css header */
+.header-col {
+   flex: 0 0 100% !important;
+   max-width: 100% !important;
+   text-align: center;
+}
+.header-sub-row {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.header-sub-row  .header-sub-rows {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 
 
 
