@@ -622,9 +622,7 @@ tr.table-box > td:nth-child(2) {
 @media (min-width:1224px) and (max-width:1439px) {
   
   
-   .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-    top: 18% !important;
-}
+ 
 .compet_form > span:nth-child(2) {
     width: calc(100% - 200px);
 }
@@ -786,6 +784,12 @@ tr.table-box > td:nth-child(2) {
     }
  }
 
+ @media (max-width: 1439px) and (min-width: 1024px) {
+    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+      top: 30%;
+    }
+  }
+  
 
 
 
