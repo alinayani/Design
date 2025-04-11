@@ -112,135 +112,138 @@
             <div class="container">
                 <div class="row">
                     <div id="tagpopup" data-bind="css: { visible: showTagPopup }">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <input type="text" class="form-control" placeholder="Enter tag"
-                                    data-bind="value: newTag">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bind="click: saveTag">Save</button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="modal-content">
+        <div class="modal-body">
+            <input type="text" class="form-control" placeholder="Enter tag" data-bind="value: newTag">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bind="click: saveTag">Save</button>
+        </div>
+    </div>
+</div>
 
-                    <div class="col-md-12 allborder ">
-                        <div class="outside">
-                            <h2 class="left">Comments</h2>
-                            <!-- <span class="right" data-bind="text: completedText, css: completedClass"></span> -->
-                             
-                            <span class="right" data-bind="text: completedText, css: completedClass">
-                                <img src="./Content/icons/Loader.png" alt="">
-                            </span>
-                            
-                        </div>
-                        <div class="compet_form">
-                            <span>Enter Comments For:</span>
-                            <span data-bind="foreach: $root.sortedCompetitors">
-                                <span
-                                    data-bind="css: { 'selected': $data === $root.selectedCompetitor(), 'saved': isSaved }"
-                                    class="spanss">
-                                    <span data-bind="text: stageName, click: $root.selectCompetitor"></span>
-                                    |
-                                    <span class="gray-text"
-                                        data-bind="text: competitorNick() ? competitorNick() : 'add tag', click: function() { $root.openTagPopup($data) }, enable: $root.selectedCompetitor() === $data"></span>
-                                </span>
-                            </span>
-                        </div>
-                        <div class="col-md-12 section2-optional" data-bind="visible: $root.showComments">
-                            <div class="col-md-6 section2-optional-1">
-                                <p><strong>OPTIONAL:</strong> Use this section to help add comments. This does not
-                                    impact rankings.</p>
-                                <div class="section2-optional-1-creatia">
-                                    <div class="criteria-tabs">
-                                        <span data-bind="foreach: selectedCompetitor().criteria">
-                                            <button
-                                                data-bind="text: name, click: $parent.selectCriteria, css: { 'active': $parent.selectedCompetitor().selectedCriteria() === $data }"></button>
-                                        </span>
-                                    </div>
-                                    <hr />
-                                    <div class="comp-criterias" data-bind="with: selectedCompetitor().selectedCriteria">
-                                        <h3 data-bind="text: name"></h3>
-                                        <table class="comp-criterias-table">
-                                            <tbody data-bind="foreach: rows">
-                                                <tr>
-                                                    <td class="col-md-3">
-                                                        <button
-                                                            data-bind="click: function() { $root.showComment($data, 'improve') }, css: { 'selected': selectedOption() === 'improve' }">Improve</button>
-                                                        <button
-                                                            data-bind="click: function() { $root.hideComment($data) }, css: { 'selected': selectedOption() === '' }">No
-                                                            Comment</button>
-                                                        <button
-                                                            data-bind="click: function() { $root.showComment($data, 'didWell') }, css: { 'selected': selectedOption() === 'didWell' }">Did
-                                                            Well</button>
-                                                    </td>
-                                                    <td class="col-md-3 "
-                                                        data-bind="text: displayedComment, css: commentClass"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <button class="btn" data-bind="click: $parent.addToComments" >Add to Comments</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 section2-optional-2">
-                                <div class="comments-summary">
-                                    <h4>2 Things you <strong>did well</strong></h4>
-                                    <textarea class="txt1" data-bind="value: $root.selectedCompetitor().didWellComments"></textarea>
+<!--<div class="col-md-12" data-bind="visible: $root.isStart">
+    <div class="event_progress__content">
+        <div class="block_table__competitor ">
+            <div>Welcome to the PSO Judging system. Each Event will consist of two parts: <b>Comments</b> and <b>Ranking by Element.</b></div>
+            <div style="margin-top: 20px;">INSTRUCTIONS</div>
+            <div class="olul">
+                <ol>
+                    <li>
+                        Complete the Comments section while each competitor performs by adding <b>2 things they did well</b> and <b>2 things they could improve</b>. Be sure to give actionable and specific feedback where possible.
+                        <ul><li><b>Optional:</b> <span>Use the Comment Helper Tool to quickly add definitions of specific elements to your comment text box. You can add more specific and customized feedback in addition to this.</span></li></ul>
+                    </li>
+                    <li>Complete the Ranking by Element section by dragging and dropping each competitor in order of best demonstrated from top to bottom. You must save comments for the first competitor before you can start this section. After that, you can alternate between sections as you please.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="button-section">
+        <div class="button">
+            <span class="normal">Comments</span>
+            <span class="start-btn">
+                <a class="btn" data-bind="click: startComments">Start</a>
+            </span>
+        </div>
+    </div>
+</div>-->
 
-                                    <h4>2 Things to <strong>improve</strong> if you did this routine again</h4>
-                                    <textarea class="txt2" data-bind="value: $root.selectedCompetitor().improveComments"></textarea>
-                                </div>
-                                <button class="btn-subm"
-                                    data-bind="click: submitComments, enable: $root.selectedCompetitor().canSubmit, css: { 'enabled': $root.selectedCompetitor().canSubmit }">Submit
-                                    Comments for <span data-bind="text: selectedCompetitor().stageName"></span></button>
-                            </div>
-                        </div>
-                        <div class="col-md-12 show-comment-section" data-bind="visible: $root.showSubmit" >
-                            <div class="align-content-md-center">
-                                <p>Thank you! Comments for <span
-                                        data-bind="text: selectedCompetitor().stageName"></span> have been submitted.
-                                </p>
-                                <button data-bind="click: editComments">Edit Comments</button>
-                            </div>
-                            <div class="align-content-md-end">
-                                <button disabled="disabled" class="disable">Submitted</button>
-                                <button data-bind="click: nextCompetitor" class="next">Next</button>
-                            </div>
-                        </div>
-                        <div class="col-md-12 finalized-comment" data-bind="visible: $root.isCompleted" >
-                            <div class="align-content-md-center">
-                                <p>
-                                    If you need to edit any comments, please do so now.<br />
-                                    Please Finalize the comments section by clicking "Finalize" below. <br />
-                                    You will not be able to go back to edit comments once you hit "Finalize".
-                                </p>
-                                <button data-bind="click: finalizeComments">Finalize all competitors comments</button>
-                            </div>
-                        </div>
-                        <div class="col-md-12 comment-done" data-bind="visible: $root.isDone">
-                            <div class="align-content-md-center">
-                                <p>
-                                    Thank You! All comments for each competitor have been submitted and finalized.
-                                </p>
-                                <button disabled class="btn disabled">All comments submitted</button>
-                            </div>
-                        </div>
-                    </div>
+<div class="allborder col-md-12"> <!--data-bind="visible: !$root.isStart()"-->
+    <div class="outside">
+        <h2 class="left">Comments</h2>
+        <span class="right" data-bind="text: completedText, css: completedClass">
+        </span>
+    </div>
+    <div class="compet_form">
+        <span>Enter Comments For:</span>
+        <span data-bind="foreach: $root.competitors">
+            <span class="spanss" data-bind="css: { 'selected': $data === $root.selectedCompetitor(), 'saved': isSaved, 'not-main': !$root.showComments() }">
+                <span data-bind="text: stageName, click: $root.selectCompetitor"></span>
+                |
+                <span data-bind="text: competitorNick() ? competitorNick() : 'add tag', click: function() { $root.openTagPopup($data) }, enable: $root.selectedCompetitor() === $data, css: { 'gray-text': !competitorNick() }"></span>
+            </span>
+        </span>
+    </div>
+    <div class="col-md-12 section2-optional" data-bind="visible: $root.showComments">
+        <div class="col-md-6 section2-optional-1">
+            <p><strong>OPTIONAL:</strong> Use this section to help add comments. This does not impact rankings.</p>
+            <div class="section2-optional-1-creatia">
+                <div class="criteria-tabs">
+                    <span data-bind="foreach: $root.criteriaList">
+                        <button data-bind="text: name, click: $parent.selectCriteria, css: { 'active': $parent.selectedCompetitor().selectedCriteria() === $data }"></button>
+                    </span>
+                </div>
+                <hr />
+                <div class="comp-criterias" data-bind="with: selectedCompetitor().selectedCriteria">
+                    <h3 data-bind="text: name"></h3>
+                    <table class="comp-criterias-table">
+                        <tbody data-bind="foreach: $root.getRowsForSelectedCriteria()">
+                            <tr>
+                                <td class="col-md-3">
+                                    <button data-bind="click: function() { $root.setSelection($data, 'improve') }, css: { 'selected': $root.getSelection($data) === 'improve' }">Improve</button>
+                                    <button data-bind="click: function() { $root.setSelection($data, '') }, css: { 'selected': !$root.getSelection($data) }">No Comment</button>
+                                    <button data-bind="click: function() { $root.setSelection($data, 'didWell') }, css: { 'selected': $root.getSelection($data) === 'didWell' }">Did Well</button>
+                                </td>
+                                <td data-bind="text: $data, style: { color: $root.getDisplayColor($data) }"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn" data-bind="click: $parent.addToComments">Add to Comments</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 section2-optional-2">
+            <div class="comments-summary">
+                <h4>2 Things you <strong>did well</strong></h4>
+                <textarea class="txt1" data-bind="value: $root.selectedCompetitor().didWellComments"></textarea>
 
-                    <div class="button rank-btn">
-                        <span class="normal">Ranking By Element</span>
-                        <span
-                        class="deesable"
-                            data-bind="css: { 'disabled': (selectedCompetitor() && 
-                            !selectedCompetitor().isSaved()) }" 
-                    style="background-color:rgba(217, 217, 217, 1) ; padding: 12px 16px; border-radius: 8px;
-                     border: 1px; color: white; text-transform: uppercase; font-size: 16px; font-weight: 400;">
-                            <span class="btn disabled "
-                                data-bind="if: (selectedCompetitor() && !selectedCompetitor().isSaved())">Start</span>
-                            <a class="btn"
-                                data-bind="attr: { href: '/Judge?eventId=' + eventId() + '&competitorId=' + (selectedCompetitor() ? selectedCompetitor().id() : 0) }, if: (selectedCompetitor() && selectedCompetitor().isSaved())">Start</a>
-                        </span>
-                    </div>
+                <h4>2 Things to <strong>improve</strong> if you did this routine again</h4>
+                <textarea class="txt2" data-bind="value: $root.selectedCompetitor().improveComments"></textarea>
+            </div>
+            <button class="btn-subm" data-bind="click: submitComments, enable: $root.selectedCompetitor().canSubmit, css: { 'enabled': $root.selectedCompetitor().canSubmit }">Submit Comments for <span data-bind="text: selectedCompetitor().stageName"></span></button>
+        </div>
+    </div>
+    <div class="col-md-12 show-comment-section" data-bind="visible: $root.showSubmit">
+        <div class="align-content-md-center">
+            <p>Thank you! Comments for <span data-bind="text: selectedCompetitor().stageName"></span> have been submitted.</p>
+            <button data-bind="click: editComments">Edit Comments</button>
+        </div>
+        <div class="align-content-md-end">
+            <button class="disable" disabled="disabled">Submitted</button>
+            <button class="next" data-bind="click: nextCompetitor">Next</button>
+        </div>
+    </div>
+    <div class="col-md-12 finalized-comment" data-bind="visible: $root.isCompleted">
+        <div class="align-content-md-center">
+            <div>
+                <p>
+                    If you need to edit any comments, please do so now.<br />
+                    Please Finalize the comments section by clicking "Finalize" below. <br />
+                    You will not be able to go back to edit comments once you hit "Finalize".
+                </p>
+            </div>
+            <button data-bind="click: finalizeComments">Finalize all competitors comments</button>
+        </div>
+    </div>
+    <div class="col-md-12 comment-done" data-bind="visible: $root.isDone">
+        <div class="align-content-md-center">
+            <div>
+                <p>Thank You! All comments for each competitor have been submitted and finalized.</p>
+            </div>
+            <button disabled class="btn disabled">All comments submitted</button>
+        </div>
+    </div>
+</div>
+
+<div class="button rank-btn">
+    <span class="normal">Ranking By Element</span>
+    <span class="deesable" style="background-color:rgba(217, 217, 217, 1) ; padding: 12px 16px; border-radius: 8px;
+                border: 1px; color: white; text-transform: uppercase; font-size: 16px; font-weight: 400;" data-bind="css: { 'disabled': (selectedCompetitor() && !selectedCompetitor().isCommentsSubmitted()) }">
+        <span class="btn disabled" data-bind="if: (selectedCompetitor() && !selectedCompetitor().isCommentsSubmitted())">Start</span>
+        <a class="btn" data-bind="attr: { href: '/Judge?eventId=' + eventId() + '&competitorId=' + (selectedCompetitor() ? selectedCompetitor().id() : 0) }, if: (selectedCompetitor() && selectedCompetitor().isCommentsSubmitted())">Start</a>
+    </span>
+</div>
+                        
            
                 </div>
             </div>
@@ -301,6 +304,7 @@
 
 
     <script>
+	
 
         var refreshTimer = Number('0');
         var pageJudgingStatus = 'Undefined';
@@ -317,6 +321,7 @@
 
         var MVC_EventId = '26463';
         var MVC_EditingCompetitorId = '0';
+		var MVC_EditingCompetitorId1 = '0';
         var MVC_InitialData = [{ "id": 33799, "orderNumber": 1, "stageName": "Morgan", "totaldeductions": null, "positivescore": null, "totalscore": null, "canEdit": false, "isCurrent": false, "isScoreSubmitted": false, "competitorNick": null, "isWarning": false, "isDisqualified": false }, { "id": 33800, "orderNumber": 2, "stageName": "Dr. Ashley Contorno", "totaldeductions": null, "positivescore": null, "totalscore": null, "canEdit": false, "isCurrent": false, "isScoreSubmitted": false, "competitorNick": null, "isWarning": false, "isDisqualified": false }, { "id": 33801, "orderNumber": 3, "stageName": "Sica", "totaldeductions": null, "positivescore": null, "totalscore": null, "canEdit": false, "isCurrent": false, "isScoreSubmitted": false, "competitorNick": null, "isWarning": false, "isDisqualified": false }, { "id": 33802, "orderNumber": 4, "stageName": "Dr Contorno", "totaldeductions": null, "positivescore": null, "totalscore": null, "canEdit": false, "isCurrent": false, "isScoreSubmitted": false, "competitorNick": null, "isWarning": false, "isDisqualified": false }, { "id": 33803, "orderNumber": 5, "stageName": "Dr. Ashley Contorno", "totaldeductions": null, "positivescore": null, "totalscore": null, "canEdit": false, "isCurrent": false, "isScoreSubmitted": false, "competitorNick": null, "isWarning": false, "isDisqualified": false }, { "id": 33804, "orderNumber": 6, "stageName": "Dr. Ashley", "totaldeductions": null, "positivescore": null, "totalscore": null, "canEdit": false, "isCurrent": false, "isScoreSubmitted": false, "competitorNick": null, "isWarning": false, "isDisqualified": false }];
         var MVC_BindTotalScore = false;
         var keyValueArray = [];
@@ -325,58 +330,83 @@
         console.log(shouldPassCriteria);
         //console.log("ali", MVC_EventId, MVC_EditingCompetitorId, MVC_InitialData, Model);
 
-        keyValueArray = [
-            { key: "exec", value: "Quality of Execution" },
-            { key: "moves", value: "DIFFICULTY OF INDIVIDUAL MOVES" },
-            { key: "trans", value: "Difficulty Of Transitions" },
-            { key: "comb", value: "Difficulty Of Combinations" },
-            { key: "bal", value: "BALANCE OF PROGRAM" },
-            { key: "movem", value: "Variety of Movements" },
-            { key: "musc", value: "Clarity of Concept and Musicality" },
-            { key: "flow", value: "FLOW AND FLUIDITY" },
-            { key: "stage", value: "Stage Presence" },
-            { key: "unique", value: "Uniqueness of Performance" },
-        ];
-        MVC_CriteriaTemplates = [
-            new Criteria('Clarity of Concept',
-                ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
-                ['Clear concept', 'Engaging message', 'Creative presentation']
-            ),
-            new Criteria('Quality of Execution',
-                ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
-                ['Smooth execution', 'Accurate timing', 'Confident presentation']
-            ),
-            new Criteria('Musicality',
-                ['Off-beat performance', 'Missed cues', 'Poor synchronization'],
-                ['Perfect rhythm', 'Accurate cues', 'Great synchronization']
-            ),
-            new Criteria('Clarity of Concept2',
-                ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
-                ['Clear concept', 'Engaging message', 'Creative presentation']
-            ),
-            new Criteria('Quality of Execution2',
-                ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
-                ['Smooth execution', 'Accurate timing', 'Confident presentation']
-            ),
-            new Criteria('Musicality2',
-                ['Off-beat performance', 'Missed cues', 'Poor synchronization'],
-                ['Perfect rhythm', 'Accurate cues', 'Great synchronization']
-            ),
-            new Criteria('Clarity of Concept3',
-                ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'],
-                ['Clear concept', 'Engaging message', 'Creative presentation']
-            ),
-            new Criteria('Quality of Execution3',
-                ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'],
-                ['Smooth execution', 'Accurate timing', 'Confident presentation']
-            ),
-            new Criteria('Musicality3',
-                ['Off-beat performance', 'Missed cues', 'Poor synchronization'],
-                ['Perfect rhythm', 'Accurate cues', 'Great synchronization']
-            )
-        ];
+        <!-- keyValueArray = [ -->
+            <!-- { key: "exec", value: "Quality of Execution" }, -->
+            <!-- { key: "moves", value: "DIFFICULTY OF INDIVIDUAL MOVES" }, -->
+            <!-- { key: "trans", value: "Difficulty Of Transitions" }, -->
+            <!-- { key: "comb", value: "Difficulty Of Combinations" }, -->
+            <!-- { key: "bal", value: "BALANCE OF PROGRAM" }, -->
+            <!-- { key: "movem", value: "Variety of Movements" }, -->
+            <!-- { key: "musc", value: "Clarity of Concept and Musicality" }, -->
+            <!-- { key: "flow", value: "FLOW AND FLUIDITY" }, -->
+            <!-- { key: "stage", value: "Stage Presence" }, -->
+            <!-- { key: "unique", value: "Uniqueness of Performance" }, -->
+        <!-- ]; -->
+        <!-- MVC_CriteriaTemplates = [ -->
+            <!-- new Criteria('Clarity of Concept', -->
+                <!-- ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'], -->
+                <!-- ['Clear concept', 'Engaging message', 'Creative presentation'] -->
+            <!-- ), -->
+            <!-- new Criteria('Quality of Execution', -->
+                <!-- ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'], -->
+                <!-- ['Smooth execution', 'Accurate timing', 'Confident presentation'] -->
+            <!-- ), -->
+            <!-- new Criteria('Musicality', -->
+                <!-- ['Off-beat performance', 'Missed cues', 'Poor synchronization'], -->
+                <!-- ['Perfect rhythm', 'Accurate cues', 'Great synchronization'] -->
+            <!-- ), -->
+            <!-- new Criteria('Clarity of Concept2', -->
+                <!-- ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'], -->
+                <!-- ['Clear concept', 'Engaging message', 'Creative presentation'] -->
+            <!-- ), -->
+            <!-- new Criteria('Quality of Execution2', -->
+                <!-- ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'], -->
+                <!-- ['Smooth execution', 'Accurate timing', 'Confident presentation'] -->
+            <!-- ), -->
+            <!-- new Criteria('Musicality2', -->
+                <!-- ['Off-beat performance', 'Missed cues', 'Poor synchronization'], -->
+                <!-- ['Perfect rhythm', 'Accurate cues', 'Great synchronization'] -->
+            <!-- ), -->
+            <!-- new Criteria('Clarity of Concept3', -->
+                <!-- ['Unclear message', 'Ambiguous presentation', 'Confusing visuals'], -->
+                <!-- ['Clear concept', 'Engaging message', 'Creative presentation'] -->
+            <!-- ), -->
+            <!-- new Criteria('Quality of Execution3', -->
+                <!-- ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence'], -->
+                <!-- ['Smooth execution', 'Accurate timing', 'Confident presentation'] -->
+            <!-- ), -->
+            <!-- new Criteria('Musicality3', -->
+                <!-- ['Off-beat performance', 'Missed cues', 'Poor synchronization'], -->
+                <!-- ['Perfect rhythm', 'Accurate cues', 'Great synchronization'] -->
+            <!-- ) -->
+        <!-- ]; -->
 
-
+MVC_CriteriaTemplates = [
+    new Criteria('Clarity of Concept',
+        ['Routine has a clear and understandable concept (emotion, storyline, and/or theme)', 'Pole tricks are incorporated in a way as to help develop the concept', 'Overall movement quality effectively communicates the concept', 'Props and costume choices add to the understanding of the concept']
+    ),
+    new Criteria('Quality of Execution',
+        ['Movements are performed with confidence, intention, and precision', 'Making complex movements look easy and effortless', 'Good form (ex. Straight knees and intentional toes)', 'Angles of movements are clearly regulated by the dancer']
+    ),
+    new Criteria('Musicality',
+        ['Off-beat performance', 'Missed cues', 'Poor synchronization', 'Poor synchronization']
+    ),
+    new Criteria('Flow & Fluidity',
+        ['Unclear message', 'Ambiguous presentation', 'Confusing visuals']
+    ),
+    new Criteria('Uniqueness',
+        ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence']
+    ),
+    new Criteria('Category',
+        ['Off-beat performance', 'Missed cues', 'Poor synchronization']
+    ),
+    new Criteria('Level',
+        ['Unclear message', 'Ambiguous presentation', 'Confusing visuals']
+    ),
+    new Criteria('Stage Etiquette',
+        ['Sloppy movements', 'Inconsistent timing', 'Lack of confidence']
+    )
+];
         var ytplayer;
 
         function adminPasswordKeyUp() {
