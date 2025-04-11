@@ -184,7 +184,7 @@
 .section2-optional-1-creatia{
     border: 1px solid rgba(217, 217, 217, 1);
     border-radius: 10px;
-    height: 876px;
+    height: 970px;
     padding: 18px 30px;
 }
 .section2-optional-1-creatia .criteria-tabs span {
@@ -264,6 +264,15 @@
     padding: 2px;
 }
 
+tr.table-box > td:nth-child(1) {
+    width: 50%;
+  
+}
+tr.table-box > td:nth-child(2) {
+    width: 25% !important;
+
+}
+
 .comp-criterias-table td:nth-child(2) {
     font-size: initial;
     background-color: initial;
@@ -293,14 +302,14 @@
 .comments-summary .txt1  {
      margin-top: 8px;
      margin-bottom: 56px;
-     min-height: 395px;
+     min-height: 441px;
      border-radius: 8px;
      
      width: 100%;
 }
 .comments-summary .txt2  {
     margin-top: 8px;
-    min-height: 395px;
+    min-height: 441px;
    border-radius: 8px;
     width: 100%;
 }
@@ -578,9 +587,6 @@
     margin-bottom: 15px;
     text-align: center;
 }
-.comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-    top: 18% !important;
-}
 
 .modal-content .modal-header {
     border-bottom: 1px solid #eee;
@@ -641,7 +647,7 @@
         margin-top: 18px; 
    }
    .section2-optional-1-creatia  {
-    height: 970px;
+    max-height: 970px;
    }
    .comments-summary .txt1 {
     min-height: 442px;

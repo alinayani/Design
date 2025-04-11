@@ -178,8 +178,8 @@
                     <h3 data-bind="text: name"></h3>
                     <table class="comp-criterias-table">
                         <tbody data-bind="foreach: $root.getRowsForSelectedCriteria()">
-                            <tr>
-                                <td class="col-md-3">
+                            <tr class="table-box">
+                                <td class="col-md-3 ">
                                     <button data-bind="click: function() { $root.setSelection($data, 'improve') }, css: { 'selected': $root.getSelection($data) === 'improve' }">Improve</button>
                                     <button data-bind="click: function() { $root.setSelection($data, '') }, css: { 'selected': !$root.getSelection($data) }">No Comment</button>
                                     <button data-bind="click: function() { $root.setSelection($data, 'didWell') }, css: { 'selected': $root.getSelection($data) === 'didWell' }">Did Well</button>
