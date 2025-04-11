@@ -294,14 +294,14 @@
 .comments-summary .txt1  {
      margin-top: 8px;
      margin-bottom: 56px;
-     height: 214px;
+     height: 356px;
      border-radius: 8px;
      
      width: 100%;
 }
 .comments-summary .txt2  {
     margin-top: 8px;
-    height: 208px;
+    height: 356px;
    border-radius: 8px;
     width: 100%;
 }
@@ -579,6 +579,9 @@
     margin-bottom: 15px;
     text-align: center;
 }
+.comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+    top: 18% !important;
+}
 
 .modal-content .modal-header {
     border-bottom: 1px solid #eee;
@@ -613,27 +616,27 @@
 
 @media (min-width:1224px) and (max-width:1439px) {
     .comments-summary .txt1 {
-        height: 248px;
+        height: 372px;
         
    }
    .comments-summary .txt2 {
-        height: 248px;
+        height: 372px;
    } 
   
    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-    top: 28% !important;
+    top: 18% !important;
 }
 .compet_form > span:nth-child(2) {
     width: calc(100% - 200px);
 }
 }
-@media (min-width:1024px) and (max-width:1199px) {
+@media (min-width:1200px) and (max-width:1223px) {
     .comments-summary .txt1 {
-        height: 373px;
-        margin-top: 18px;
+        height: 381px;
+       
    }
    .comments-summary .txt2 {
-        height: 368px;
+        height: 381px;
    } 
   
    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
@@ -647,6 +650,18 @@
 }
 }
 
+@media (min-width:1024px) and (max-width:1199px) {
+    .comments-summary .txt1 {
+        height: 431px;
+        margin-top: 18px;
+       
+   }
+   .comments-summary .txt2 {
+        height: 432px;
+   } 
+    
+}
+
 
 @media (min-width:1024px) and (max-width:1439px) {
     .comments-summary  {
@@ -655,8 +670,6 @@
     .j-system.comments .container {
         min-width: 960px;
     }
-   
-   
     
 }
 
