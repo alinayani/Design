@@ -184,13 +184,13 @@
 .section2-optional-1-creatia{
     border: 1px solid rgba(217, 217, 217, 1);
     border-radius: 10px;
-    height: 970px;
+    min-height: 700px;
     padding: 18px 30px;
 }
 .section2-optional-1-creatia .criteria-tabs span {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 20px;
+    row-gap: 15px;
     justify-content: space-around;
 }
 .section2-optional-1-creatia .criteria-tabs button {
@@ -301,15 +301,15 @@ tr.table-box > td:nth-child(2) {
 
 .comments-summary .txt1  {
      margin-top: 8px;
-     margin-bottom: 56px;
-     min-height: 441px;
+     margin-bottom: 48px;
+     min-height: 311px;
      border-radius: 8px;
      
      width: 100%;
 }
 .comments-summary .txt2  {
     margin-top: 8px;
-    min-height: 441px;
+    min-height: 310px;
    border-radius: 8px;
     width: 100%;
 }
@@ -645,11 +645,14 @@ tr.table-box > td:nth-child(2) {
    .section2-optional-1-creatia  {
     max-height: 970px;
    }
+   .section2-optional-1-creatia {
+    min-height: 896px
+   }
    .comments-summary .txt1 {
-    min-height: 442px;
+    min-height: 410px;
    }
    .comments-summary .txt2 {
-    min-height: 442px;
+    min-height: 410px;
    }
    
     
@@ -782,11 +785,17 @@ tr.table-box > td:nth-child(2) {
     }
  }
 
- @media (max-width: 1439px) and (min-width: 1024px) {
+ @media (max-width: 1439px) and (min-width: 1124px) {
     .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-      top: 30%;
+      top: 26%;
     }
   }
+  @media (max-width: 1199px) and (min-width: 1024px) {
+    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
+      top: 19%;
+    }
+  }
+  
   
 
 
