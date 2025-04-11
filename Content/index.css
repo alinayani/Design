@@ -161,7 +161,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: flex-start;
+    
 }
 .section2-optional .section2-optional-1 {
     width: 55%;
@@ -184,9 +184,8 @@
 .section2-optional-1-creatia{
     border: 1px solid rgba(217, 217, 217, 1);
     border-radius: 10px;
-    
-    min-height: 390px;
-    padding: 19px 30px;
+    height: 876px;
+    padding: 18px 30px;
 }
 .section2-optional-1-creatia .criteria-tabs span {
     display: flex;
@@ -294,14 +293,14 @@
 .comments-summary .txt1  {
      margin-top: 8px;
      margin-bottom: 56px;
-     height: 356px;
+     min-height: 395px;
      border-radius: 8px;
      
      width: 100%;
 }
 .comments-summary .txt2  {
     margin-top: 8px;
-    height: 356px;
+    min-height: 395px;
    border-radius: 8px;
     width: 100%;
 }
@@ -615,13 +614,7 @@
 }
 
 @media (min-width:1224px) and (max-width:1439px) {
-    .comments-summary .txt1 {
-        height: 372px;
-        
-   }
-   .comments-summary .txt2 {
-        height: 372px;
-   } 
+  
   
    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
     top: 18% !important;
@@ -631,13 +624,6 @@
 }
 }
 @media (min-width:1200px) and (max-width:1223px) {
-    .comments-summary .txt1 {
-        height: 381px;
-       
-   }
-   .comments-summary .txt2 {
-        height: 381px;
-   } 
   
    .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
     top: 18% !important;
@@ -652,13 +638,18 @@
 
 @media (min-width:1024px) and (max-width:1199px) {
     .comments-summary .txt1 {
-        height: 431px;
-        margin-top: 18px;
-       
+        margin-top: 18px; 
+   }
+   .section2-optional-1-creatia  {
+    height: 970px;
+   }
+   .comments-summary .txt1 {
+    min-height: 442px;
    }
    .comments-summary .txt2 {
-        height: 432px;
-   } 
+    min-height: 442px;
+   }
+   
     
 }
 
@@ -783,9 +774,7 @@
     }
  }
  @media (min-width:1224px) and (max-width:1439px){
-    .section2-optional-1-creatia .criteria-tabs button{
-         width: 80px;
-    }
+   
     .section2-optional-1-creatia .criteria-tabs span {
         justify-content: space-evenly;
     }
