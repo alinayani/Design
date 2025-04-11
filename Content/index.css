@@ -629,9 +629,7 @@ tr.table-box > td:nth-child(2) {
 }
 @media (min-width:1200px) and (max-width:1223px) {
   
-   .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-    top: 18% !important;
-}
+
 .comp-criterias-table td.no-comment {
     line-height: 1.5em;
 }
