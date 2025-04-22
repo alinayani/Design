@@ -240,10 +240,12 @@
 .comp-criterias-table button {
     background: none;
     border: 2px solid transparent; 
-    padding: 6px 5px; 
+    padding: 10px 15px; 
     font-size: 11px;
     border-radius: 7px; 
     transition: background-color 0.3s, color 0.3s; 
+    width: 100%;
+    max-width: 110px;
 }
 
 
@@ -251,7 +253,6 @@
     background-color: rgba(255, 255, 255, 1);
     color: rgba(0, 0, 0, 1);
     border: 2px solid rgba(0, 0, 0, 0.1); 
-    padding: 10px 15px; 
 }
 
 
@@ -313,7 +314,7 @@ tr.table-box > td:nth-child(2) {
 }
 .comments-summary .txt2  {
     margin-top: 8px;
-    min-height: 310px;
+    min-height: 296px;
    border-radius: 8px;
     width: 100%;
 }
@@ -610,6 +611,38 @@ tr.table-box > td:nth-child(2) {
 
 /* For screens smaller than 1200px (large screens, laptops) */
 /* Desktop (large screens) */
+
+
+@media screen and (max-width: 1620px) {
+    .comp-criterias-table button{max-width: 95px;padding: 9px 10px;}
+
+}
+@media screen and (max-width: 1439px) {
+    .comp-criterias-table button {
+        max-width: 79px;
+        padding: 9px 5px;
+        font-size: 10px;
+    }
+    table.comp-criterias-table {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    .section2-optional-1-creatia{padding: 18px 20px;}
+    
+}
+
+@media screen and (max-width: 1225px) {
+
+    .comp-criterias-table button{
+        max-width: 77px;
+        padding: 8px 5px;
+    }
+}
+
 @media (min-width:1440px) and (max-width:1620px) {
     .comments-summary  {
         width: 100%;
@@ -818,6 +851,18 @@ tr.table-box > td:nth-child(2) {
       top: 28%;
     }
   }
+
+  @media screen and (max-width: 1439px) {
+ 
+    tr.table-box > td:nth-child(1){width: 40%;}
+     
+  }
+  .comp-criterias-table td {
+    vertical-align: middle;
+  }
+     
+    
+     
   
   
 
