@@ -665,8 +665,8 @@ tr.table-box > td:nth-child(2) {
 }
    tr.table-box > td:nth-child(1) {
     width: 50%;
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 70%;
+    max-width: 66%;
 }
 tr.table-box > td:nth-child(2) {
     width: 35% !important;
@@ -753,6 +753,7 @@ tr.table-box > td:nth-child(2) {
 
 .comp-criterias-table td:nth-child(2) {
     text-align: left !important;
+    line-height: 1.3em;
     padding-left: 30px !important; 
     position: relative;
 }
