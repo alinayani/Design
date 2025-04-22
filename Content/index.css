@@ -165,12 +165,16 @@
 }
 .section2-optional .section2-optional-1 {
     width: 55%;
+    max-width: 55% !important;
+    flex: 0 0 60% !important;
 }
 .section2-optional .section2-optional-2 {
     display: flex;
     padding-top: 16px;
     flex-direction: column;
     width: 45%;
+    flex: 0 0 44% !important;
+    max-width: 45% !important;
 }
 .section2-optional .section2-optional-1  p {
     text-align: center;
@@ -236,7 +240,7 @@
 .comp-criterias-table button {
     background: none;
     border: 2px solid transparent; 
-    padding: 10px 15px; 
+    padding: 6px 5px; 
     font-size: 11px;
     border-radius: 7px; 
     transition: background-color 0.3s, color 0.3s; 
@@ -652,8 +656,26 @@ tr.table-box > td:nth-child(2) {
     min-height: 410px;
    }
    .comments-summary .txt2 {
-    min-height: 410px;
+    min-height: 393px;
    }
+   .comp-criterias-table tr {  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+   tr.table-box > td:nth-child(1) {
+    width: 50%;
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+tr.table-box > td:nth-child(2) {
+    width: 35% !important;
+    line-height: 1.2em;
+}
+
+.comp-criterias-table td  button {
+    margin-right: 0px !important;
+}
    
     
 }
@@ -787,12 +809,12 @@ tr.table-box > td:nth-child(2) {
 
  @media (max-width: 1439px) and (min-width: 1124px) {
     .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-      top: 26%;
+      top: 49%;
     }
   }
   @media (max-width: 1199px) and (min-width: 1024px) {
     .comp-criterias-table td:nth-child(2):not(.no-comment)::before {
-      top: 19%;
+      top: 28%;
     }
   }
   
